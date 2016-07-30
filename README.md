@@ -1,6 +1,6 @@
 # Freedoms ![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
-<a href="https://itunes.apple.com/app/apple-store/id1130648334?pt=2305194&ct=Freedoms.github&mt=8">![](https://cdn.rawgit.com/shadowsocks/Freedoms/master/Download.svg)</a>
+<a href="https://itunes.apple.com/app/apple-store/id1130648334?pt=2305194&ct=Freedoms.github&mt=8">![](https://cdn.rawgit.com/Liqianyu/Freedoms/master/Download.svg)</a>
 
 Freedoms is an iOS client that implements custom proxies with the leverage of Network Extension framework introduced by Apple since iOS 9.
 
