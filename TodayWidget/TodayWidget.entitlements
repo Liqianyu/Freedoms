@@ -10,7 +10,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.touchingapp.potatso</string>
+		<string>group.land.freedoms.tool</string>
 	</array>
 </dict>
 </plist>

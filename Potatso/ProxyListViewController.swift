@@ -14,12 +14,12 @@ import Eureka
 private let rowHeight: CGFloat = 107
 private let kProxyCellIdentifier = "proxy"
 
-class ProxyListViewController: FormViewController {
+class ProxyListViewController: FormViewController,ProxyRowProtocol{
 
     var proxies: [Proxy?] = []
     let allowNone: Bool
     let chooseCallback: (Proxy? -> Void)?
-
+   
     init(allowNone: Bool = false, chooseCallback: (Proxy? -> Void)? = nil) {
         self.chooseCallback = chooseCallback
         self.allowNone = allowNone
@@ -32,16 +32,23 @@ class ProxyListViewController: FormViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "Proxy".localized()
+        navigationItem.title = "Proxies".localized()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(add))
         reloadData()
     }
 
+    func pushUI(proxy: Proxy?) {
+        let vc = ProxyConfigurationViewController(upstreamProxy: proxy)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func add() {
         let vc = ProxyConfigurationViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    
+    
     func reloadData() {
         proxies = defaultRealm.objects(Proxy).sorted("createAt").map({ $0 })
         if allowNone {
@@ -54,8 +61,12 @@ class ProxyListViewController: FormViewController {
             section
                 <<< ProxyRow () {
                     $0.value = proxy
+                    
                 }.cellSetup({ (cell, row) -> () in
-                    cell.selectionStyle = .None
+                    
+                    cell.delegate = self
+                    cell.selectionStyle = .Default
+                    
                 }).onCellSelection({ [unowned self] (cell, row) in
                     cell.setSelected(false, animated: true)
                     let proxy = row.value
@@ -112,6 +123,7 @@ class ProxyListViewController: FormViewController {
         super.viewDidLayoutSubviews()
         tableView?.tableFooterView = UIView()
         tableView?.tableHeaderView = UIView()
+        
     }
 
 }

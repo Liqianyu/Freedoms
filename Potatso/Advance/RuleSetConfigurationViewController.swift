@@ -130,6 +130,7 @@ class RuleSetConfigurationViewController: FormViewController {
             ruleSet.name = name
             ruleSet.rules.removeAll()
             ruleSet.rules.appendContentsOf(rules)
+            
             defaultRealm.add(ruleSet, update: true)
             try defaultRealm.commitWrite()
             callback?(ruleSet)

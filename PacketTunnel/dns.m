@@ -15,25 +15,25 @@
 
 @implementation DNSConfig
 
-+ (NSArray *)getSystemDnsServers {
++(NSArray *)getSystemDnsServers{
     res_state res = malloc(sizeof(struct __res_state));
-    res_ninit(res);
-    NSMutableArray *servers = [NSMutableArray array];
-    for (int i = 0; i < res->nscount; i++) {
-        sa_family_t family = res->nsaddr_list[i].sin_family;
-        char str[INET_ADDRSTRLEN + 1]; // String representation of address
-        if (family == AF_INET) { // IPV4 address
-            inet_ntop(AF_INET, & (res->nsaddr_list[i].sin_addr.s_addr), str, INET_ADDRSTRLEN);
-            str[INET_ADDRSTRLEN] = '\0';
-            NSString *address = [[NSString alloc] initWithCString:str encoding:NSUTF8StringEncoding];
-            if (address.length) {
-                [servers addObject:address];
+    int result = res_ninit(res);
+    NSMutableArray *servers = [[NSMutableArray alloc] init];
+    if (result == 0) {
+        union res_9_sockaddr_union *addr_union = malloc(res->nscount * sizeof(union res_9_sockaddr_union));
+        res_getservers(res, addr_union, res->nscount);
+        for (int i = 0; i < res->nscount; i++) {
+            if (addr_union[i].sin.sin_family == AF_INET) {
+                char ip[INET_ADDRSTRLEN];
+                inet_ntop(AF_INET, &(addr_union[i].sin.sin_addr), ip, INET_ADDRSTRLEN);
+                NSString *dnsIP = [NSString stringWithUTF8String:ip];
+                [servers addObject:dnsIP];
             }
         }
     }
-    res_ndestroy(res);
+    res_nclose(res);
     free(res);
-    return servers;
+    return [NSArray arrayWithArray:servers];
 }
 
 @end

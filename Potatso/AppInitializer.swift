@@ -9,29 +9,36 @@
 import Foundation
 import ICSMainFramework
 import Appirater
-import Fabric
 
-let appID = "1070901416"
+let appID = ""
 
 class AppInitializer: NSObject, AppLifeCycleProtocol {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         configLogging()
-        #if !DEBUG
-            Fabric.with([Answers.self, Crashlytics.self])
-        #endif
-        configHelpShift()
+        let umengConfig = UMAnalyticsConfig()
+        umengConfig.appKey = ""
+        umengConfig.channelId = ""
+        MobClick.startWithConfigure(umengConfig)
+        //
+        configAppirater()
         return true
     }
-
+    
     func configAppirater() {
         Appirater.setAppId(appID)
+        Appirater.setUsesUntilPrompt(100)
+        Appirater.setDaysUntilPrompt(0)
+        Appirater.setTimeBeforeReminding(100)
+        Appirater.setSignificantEventsUntilPrompt(200)
+        Appirater.setDebug(false)
+        Appirater.appLaunched(true)
     }
-
+    
     func configLogging() {
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
         DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
-
+        
         let fileLogger: DDFileLogger = DDFileLogger() // File Logger
         fileLogger.rollingFrequency = 60*60*24*3  // 24 hours
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
@@ -40,13 +47,8 @@ class AppInitializer: NSObject, AppLifeCycleProtocol {
             DDLog.setLevel(DDLogLevel.All, forClass: DDTTYLogger.self)
             DDLog.setLevel(DDLogLevel.All, forClass: DDASLLogger.self)
         #else
-
+            
         #endif
-    }
-
-    func configHelpShift() {
-        HelpshiftCore.initializeWithProvider(HelpshiftAll.sharedInstance())
-        HelpshiftCore.installForApiKey(HELPSHIFT_KEY, domainName: HELPSHIFT_DOMAIN, appID: HELPSHIFT_ID)
     }
     
 }

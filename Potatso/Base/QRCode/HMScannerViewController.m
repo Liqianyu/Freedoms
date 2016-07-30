@@ -91,17 +91,20 @@
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
+    __weak typeof(self) weakSelf = self;
+    
     // 扫描图像
     [HMScanner scaneImage:info[UIImagePickerControllerOriginalImage] completion:^(NSArray *values) {
         
         if (values.count > 0) {
-            self.completionCallBack(values.firstObject);
+            
             [self dismissViewControllerAnimated:NO completion:^{
-                [self clickCloseButton];
+                [weakSelf clickCloseButton];
+                weakSelf.completionCallBack(values.firstObject);
             }];
         } else {
             [self showTextHUD:NSLocalizedString(@"qrcode.nocode", nil) dismissAfterDelay:1.0f];
-
+            
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
@@ -134,15 +137,15 @@
 /// 准备导航栏
 - (void)prepareNavigationBar {
     // 1> 背景颜色
-//    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithWhite:0.1 alpha:1.0]];
-//    self.navigationController.navigationBar.translucent = YES;
-//    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    //    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithWhite:0.1 alpha:1.0]];
+    //    self.navigationController.navigationBar.translucent = YES;
+    //    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
     
     // 2> 标题
     self.title = NSLocalizedString(@"qrcode.title", nil);
     
     // 3> 左右按钮
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(clickCloseButton)];
+    //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(clickCloseButton)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"qrcode.album", nil) style:UIBarButtonItemStylePlain target:self action:@selector(clickAlbumButton)];
 }
 

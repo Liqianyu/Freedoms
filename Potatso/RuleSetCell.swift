@@ -10,10 +10,26 @@ import Foundation
 import Cartography
 import PotatsoModel
 
+typealias clousureVoidType = () -> Void
+typealias clousureValueType   = (ruleSet: RuleSet) -> Void
+
 class RuleSetCell: UITableViewCell {
 
+    var clousureVoid : clousureVoidType?
+    var clousureValue : clousureValueType?
+    
     let group = ConstraintGroup()
 
+    var currentRuleSet : RuleSet?
+    
+    weak var delegate: ProxyRowProtocol?
+    
+    let detailButton: UIButton = {
+        let v = UIButton()
+        v.setImage(UIImage(named:"detailButtonImg"), forState:UIControlState.Normal)
+        return v
+    }()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         preservesSuperviewLayoutMargins = false
@@ -27,18 +43,28 @@ class RuleSetCell: UITableViewCell {
 //        contentView.addSubview(avatarImageView)
 //        contentView.addSubview(authorNameLabel)
 //        contentView.addSubview(updateAtLabel)
+        contentView.addSubview(detailButton)
+        
         constrain(contentView, self) { contentView, superview in
             contentView.edges == superview.edges
         }
         countLabel.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: .Horizontal)
         countLabel.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Horizontal)
-        constrain(titleLabel, countLabel, contentView) { titleLabel, countLabel, contentView in
+        constrain(titleLabel, countLabel, contentView,detailButton) { titleLabel, countLabel, contentView ,detailButton in
             titleLabel.leading == contentView.leading + 15
             titleLabel.top == contentView.top + 13
             countLabel.leading == titleLabel.trailing + 15
 
-            countLabel.trailing == contentView.trailing - 15
+            countLabel.trailing == contentView.trailing - 60
             countLabel.centerY == titleLabel.centerY
+            
+            detailButton.centerY == titleLabel.centerY
+            detailButton.width == 45
+            detailButton.height == 45
+            detailButton.right == contentView.right - 10
+            
+            self.detailButton.addTarget(self, action: #selector(RuleSetCell.detialButtonAction), forControlEvents: .TouchUpInside)
+        
         }
         constrain(descLabel, leftHintView, titleLabel, countLabel) { descLabel, leftHintView, titleLabel, countLabel in
             leftHintView.leading == titleLabel.leading
@@ -91,6 +117,7 @@ class RuleSetCell: UITableViewCell {
         constrain(bottomView, contentView, replace: group) { bottom, contentView in
             bottom.bottom == contentView.bottom - 15
         }
+        currentRuleSet = ruleSet;
     }
 
     override func setHighlighted(highlighted: Bool, animated: Bool) {
@@ -163,5 +190,10 @@ class RuleSetCell: UITableViewCell {
         v.clipsToBounds = true
         return v
     }()
-
+    
+    func detialButtonAction() {
+        /** 传值 */
+        clousureValue!(ruleSet: currentRuleSet!)
+//        navigationController?.popViewControllerAnimated(true)
+    }
 }

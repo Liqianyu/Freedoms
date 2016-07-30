@@ -82,14 +82,8 @@ DEFINE_CGI_PARAM_RADIO   ("fast-redirects",             ACTION_FAST_REDIRECTS,  
 DEFINE_ACTION_MULTI      ("filter",                     ACTION_MULTI_FILTER)
 DEFINE_ACTION_BOOL       ("force-text-mode",            ACTION_FORCE_TEXT_MODE)
 DEFINE_ACTION_STRING     ("forward-override",           ACTION_FORWARD_OVERRIDE, ACTION_STRING_FORWARD_OVERRIDE)
-DEFINE_CGI_PARAM_CUSTOM  ("forward-override",           ACTION_FORWARD_OVERRIDE, ACTION_STRING_FORWARD_OVERRIDE, "forward .")
-
-// For Potatso Rules
-// URL Rules
-DEFINE_ACTION_STRING     ("forward-rule",               ACTION_FORWARD_RULE, ACTION_STRING_FORWARD_RULE)
-// IP Rules
 DEFINE_ACTION_STRING     ("forward-resolved-ip",        ACTION_FORWARD_RESOLVED_IP, ACTION_STRING_FORWARD_RESOLVED_IP)
-
+DEFINE_CGI_PARAM_CUSTOM  ("forward-override",           ACTION_FORWARD_OVERRIDE, ACTION_STRING_FORWARD_OVERRIDE, "forward .")
 DEFINE_ACTION_BOOL       ("handle-as-empty-document",   ACTION_HANDLE_AS_EMPTY_DOCUMENT)
 DEFINE_ACTION_BOOL       ("handle-as-image",            ACTION_IMAGE)
 DEFINE_ACTION_STRING     ("hide-accept-language",       ACTION_HIDE_ACCEPT_LANGUAGE, ACTION_STRING_LANGUAGE)

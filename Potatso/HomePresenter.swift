@@ -7,25 +7,28 @@
 //
 
 import Foundation
-
+import Async
 protocol HomePresenterProtocol: class {
     func handleRefreshUI()
 }
 
 class HomePresenter: NSObject {
-
+    
+    var proxies: [Proxy?] = []
+    var ruleSets: [RuleSet?] = []
+    
     var vc: UIViewController!
-
+    
     var group: ConfigurationGroup {
         return CurrentGroupManager.shared.group
     }
-
+    
     var proxy: Proxy? {
         return group.proxies.first
     }
-
+    
     weak var delegate: HomePresenterProtocol?
-
+    
     override init() {
         super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onVPNStatusChanged), name: kProxyServiceVPNStatusNotification, object: nil)
@@ -33,13 +36,55 @@ class HomePresenter: NSObject {
             self.delegate?.handleRefreshUI()
         }
     }
-
+    
     func bindToVC(vc: UIViewController) {
         self.vc = vc
     }
+    
+    func importConfigFromUrl() {
+        let importer = Importer(vc:self.vc)
+        importer.importConfigFromUrl()
+    }
+    
+    func importConfigFromQRCode() {
+        let importer = Importer(vc: self.vc)
+        importer.importConfigFromQRCode()
+    }
+    
+    func refreshCurrentProxy()
+    {
+        proxies = defaultRealm.objects(Proxy).sorted("createAt").map({ $0 })
+        
+        if proxies.count<=0 {
+            return
+        }
+        do {
+            try defaultRealm.write {
+                self.group.proxies.removeAll()
+                
+                if let proxy = proxies[proxies.count-1] {
+                    self.group.proxies.append(proxy)
+                }
+            }
+            self.delegate?.handleRefreshUI()
+        }catch {
+            self.vc.showTextHUD("\("Fail to add ruleset".localized()): \((error as NSError).localizedDescription)", dismissAfterDelay: 1.5)
+        }
+        
+    }
 
+    func refreshCurrentRule()
+    {
+        ruleSets = defaultRealm.objects(RuleSet).sorted("createAt").map({ $0 })
+        
+        if(ruleSets.count>0)
+        {
+            self.appendRuleSet(ruleSets[ruleSets.count-1])
+        }
+    }
+    
     // MARK: - Actions
-
+    
     func switchVPN() {
         VPN.switchVPN(group) { [unowned self] (error) in
             if let error = error {
@@ -47,7 +92,26 @@ class HomePresenter: NSObject {
             }
         }
     }
-
+    
+    func  updateVPN() {
+        VPN.updateVPN(group) { [unowned self] (error) in
+            
+            Async.main(after: 1) {
+                self.switchVPN()
+            }
+            
+            if let error = error {
+                Alert.show(self.vc, message: "\("Fail to switch VPN.".localized()) (\(error))")
+            }
+          
+        }
+    }
+    
+    func showRuleSetConfiguration(ruleSet: RuleSet?) {
+        let ruleSetVC = RuleSetConfigurationViewController(ruleSet: ruleSet)
+        vc.navigationController?.pushViewController(ruleSetVC, animated: true)
+    }
+    
     func chooseProxy() {
         let chooseVC = ProxyListViewController(allowNone: true) { [unowned self] proxy in
             do {
@@ -64,11 +128,11 @@ class HomePresenter: NSObject {
         }
         vc.navigationController?.pushViewController(chooseVC, animated: true)
     }
-
+    
     func chooseConfigGroups() {
         ConfigGroupChooseManager.shared.show()
     }
-
+    
     func showAddConfigGroup() {
         var urlTextField: UITextField?
         let alert = UIAlertController(title: "Add Config Group".localized(), message: nil, preferredStyle: .Alert)
@@ -88,7 +152,7 @@ class HomePresenter: NSObject {
         alert.addAction(UIAlertAction(title: "CANCEL".localized(), style: .Cancel, handler: nil))
         vc.presentViewController(alert, animated: true, completion: nil)
     }
-
+    
     func addEmptyConfigGroup(name: String) throws {
         let trimmedName = name.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         if trimmedName.characters.count == 0 {
@@ -104,7 +168,7 @@ class HomePresenter: NSObject {
         }
         CurrentGroupManager.shared.group = group
     }
-
+    
     func addRuleSet() {
         let destVC: UIViewController
         if defaultRealm.objects(RuleSet).count == 0 {
@@ -118,7 +182,7 @@ class HomePresenter: NSObject {
         }
         vc.navigationController?.pushViewController(destVC, animated: true)
     }
-
+    
     func appendRuleSet(ruleSet: RuleSet?) {
         guard let ruleSet = ruleSet where !group.ruleSets.contains(ruleSet) else {
             return
@@ -132,7 +196,7 @@ class HomePresenter: NSObject {
             self.vc.showTextHUD("\("Fail to add ruleset".localized()): \((error as NSError).localizedDescription)", dismissAfterDelay: 1.5)
         }
     }
-
+    
     func updateDNS(dnsString: String) {
         var dns: String = ""
         let trimmedDNSString = dnsString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -159,42 +223,21 @@ class HomePresenter: NSObject {
             self.vc.showTextHUD("\("Fail to change dns".localized()): \((error as NSError).localizedDescription)", dismissAfterDelay: 1.5)
         }
     }
-
+    
     func onVPNStatusChanged() {
         self.delegate?.handleRefreshUI()
     }
-
-    func changeGroupName() {
-        var urlTextField: UITextField?
-        let alert = UIAlertController(title: "Change Name".localized(), message: nil, preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler { (textField) in
-            textField.placeholder = "Input New Name".localized()
-            urlTextField = textField
-        }
-        alert.addAction(UIAlertAction(title: "OK".localized(), style: .Default, handler: { [unowned self] (action) in
-            if let input = urlTextField?.text {
-                do {
-                    try self.group.changeName(input)
-                }catch {
-                    Alert.show(self.vc, title: "Failed to change name", message: "\(error)")
-                }
-                self.delegate?.handleRefreshUI()
-            }
-        }))
-        alert.addAction(UIAlertAction(title: "CANCEL".localized(), style: .Cancel, handler: nil))
-        vc.presentViewController(alert, animated: true, completion: nil)
-    }
-
+    
 }
 
 class CurrentGroupManager {
-
+    
     static let shared = CurrentGroupManager()
-
+    
     private init() {}
-
+    
     var onChange: (ConfigurationGroup? -> Void)?
-
+    
     var group: ConfigurationGroup! {
         didSet(o) {
             self.onChange?(group)

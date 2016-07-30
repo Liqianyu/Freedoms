@@ -92,7 +92,6 @@ void free_http_request(struct http_request *http)
    freez(http->path);
    freez(http->ver);
    freez(http->host_ip_addr_str);
-   freez(http->remote_host_ip_addr_str);
 #ifndef FEATURE_EXTENDED_HOST_PATTERNS
    freez(http->dbuffer);
    freez(http->dvec);

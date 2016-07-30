@@ -18,10 +18,6 @@ private let kProxyFormPort = "port"
 private let kProxyFormEncryption = "encryption"
 private let kProxyFormPassword = "password"
 private let kProxyFormOta = "ota"
-private let kProxyFormObfs = "obfs"
-private let kProxyFormObfsParam = "obfsParam"
-private let kProxyFormProtocol = "protocol"
-
 
 class ProxyConfigurationViewController: FormViewController {
     
@@ -67,24 +63,22 @@ class ProxyConfigurationViewController: FormViewController {
         form +++ Section()
             <<< PushRow<ProxyType>(kProxyFormType) {
                 $0.title = "Proxy Type".localized()
-                $0.options = [ProxyType.Shadowsocks, ProxyType.ShadowsocksR]
+                $0.options = [ProxyType.Shadowsocks]
                 $0.value = self.upstreamProxy.type
                 $0.selectorTitle = "Choose Proxy Type".localized()
             }
             <<< TextRow(kProxyFormName) {
                 $0.title = "Name".localized()
                 $0.value = self.upstreamProxy.name
-            }.cellSetup { cell, row in
-                cell.textField.placeholder = "Proxy Name".localized()
+                }.cellSetup { cell, row in
+                    cell.textField.placeholder = "Proxy Name".localized()
             }
             <<< TextRow(kProxyFormHost) {
                 $0.title = "Host".localized()
                 $0.value = self.upstreamProxy.host
-            }.cellSetup { cell, row in
-                cell.textField.placeholder = "Proxy Server Host".localized()
-                cell.textField.keyboardType = .URL
-                cell.textField.autocorrectionType = .No
-                cell.textField.autocapitalizationType = .None
+                }.cellSetup { cell, row in
+                    cell.textField.placeholder = "Proxy Server Host".localized()
+                    cell.textField.keyboardType = .URL
             }
             <<< IntRow(kProxyFormPort) {
                 $0.title = "Port".localized()
@@ -101,12 +95,12 @@ class ProxyConfigurationViewController: FormViewController {
             }
             <<< PushRow<String>(kProxyFormEncryption) {
                 $0.title = "Encryption".localized()
-                $0.options = Proxy.ssSupportedEncryption
-                $0.value = self.upstreamProxy.authscheme ?? $0.options[2]
+                $0.options = ["rc4-md5", "table", "salsa20", "chacha20", "aes-256-cfb", "aes-192-cfb", "aes-128-cfb", "bf-cfb", "cast5-cfb", "des-cfb", "rc2-cfb", "rc4", "seed-cfb"]
+                $0.value = self.upstreamProxy.authscheme ?? $0.options[0]
                 $0.selectorTitle = "Choose encryption method".localized()
                 $0.hidden = Condition.Function([kProxyFormType]) { form in
-                    if let r1 : PushRow<ProxyType> = form.rowByTag(kProxyFormType), isSS = r1.value?.isShadowsocks {
-                        return !isSS
+                    if let r1 : PushRow<ProxyType> = form.rowByTag(kProxyFormType) {
+                        return r1.value != ProxyType.Shadowsocks
                     }
                     return false
                 }
@@ -120,52 +114,7 @@ class ProxyConfigurationViewController: FormViewController {
             <<< SwitchRow(kProxyFormOta) {
                 $0.title = "One Time Auth".localized()
                 $0.value = self.upstreamProxy.ota
-                $0.hidden = Condition.Function([kProxyFormType]) { form in
-                    if let r1 : PushRow<ProxyType> = form.rowByTag(kProxyFormType) {
-                        return r1.value != ProxyType.Shadowsocks
-                    }
-                    return false
-                }
             }
-            <<< PushRow<String>(kProxyFormProtocol) {
-                $0.title = "Protocol".localized()
-                $0.value = self.upstreamProxy.ssrProtocol
-                $0.options = Proxy.ssrSupportedProtocol
-                $0.selectorTitle = "Choose SSR protocol".localized()
-                $0.hidden = Condition.Function([kProxyFormType]) { form in
-                    if let r1 : PushRow<ProxyType> = form.rowByTag(kProxyFormType) {
-                        return r1.value != ProxyType.ShadowsocksR
-                    }
-                    return false
-                }
-            }
-            <<< PushRow<String>(kProxyFormObfs) {
-                $0.title = "Obfs".localized()
-                $0.value = self.upstreamProxy.ssrObfs
-                $0.options = Proxy.ssrSupportedObfs
-                $0.selectorTitle = "Choose SSR obfs".localized()
-                $0.hidden = Condition.Function([kProxyFormType]) { form in
-                    if let r1 : PushRow<ProxyType> = form.rowByTag(kProxyFormType) {
-                        return r1.value != ProxyType.ShadowsocksR
-                    }
-                    return false
-                }
-            }
-            <<< TextRow(kProxyFormObfsParam) {
-                $0.title = "Obfs Param".localized()
-                $0.value = self.upstreamProxy.ssrObfsParam
-                $0.hidden = Condition.Function([kProxyFormType]) { form in
-                    if let r1 : PushRow<ProxyType> = form.rowByTag(kProxyFormType) {
-                        return r1.value != ProxyType.ShadowsocksR
-                    }
-                    return false
-                }
-            }.cellSetup { cell, row in
-                cell.textField.placeholder = "SSR Obfs Param".localized()
-                cell.textField.autocorrectionType = .No
-                cell.textField.autocapitalizationType = .None
-            }
-
     }
     
     func save() {
@@ -195,7 +144,7 @@ class ProxyConfigurationViewController: FormViewController {
             let user: String? = nil
             var password: String?
             switch type {
-            case .Shadowsocks, .ShadowsocksR:
+            case .Shadowsocks:
                 guard let encryption = values[kProxyFormEncryption] as? String where encryption.characters.count > 0 else {
                     throw "You must choose a encryption method".localized()
                 }
@@ -217,9 +166,6 @@ class ProxyConfigurationViewController: FormViewController {
             upstreamProxy.user = user
             upstreamProxy.password = password
             upstreamProxy.ota = ota
-            upstreamProxy.ssrProtocol = values[kProxyFormProtocol] as? String
-            upstreamProxy.ssrObfs = values[kProxyFormObfs] as? String
-            upstreamProxy.ssrObfsParam = values[kProxyFormObfsParam] as? String
             defaultRealm.add(upstreamProxy, update: true)
             try defaultRealm.commitWrite()
             close()

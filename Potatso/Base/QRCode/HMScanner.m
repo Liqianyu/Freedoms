@@ -203,7 +203,9 @@
     CAShapeLayer *layer = [CAShapeLayer layer];
     
     layer.lineWidth = 4;
-    layer.strokeColor = [UIColor greenColor].CGColor;
+//    layer.strokeColor = [UIColor greenColor].CGColor;
+    
+    layer.strokeColor = [UIColor colorWithRed:0.12 green:0.73 blue:0.13 alpha:1.00].CGColor;
     layer.fillColor = [UIColor clearColor].CGColor;
     layer.path = [self cornersPath:dataObject.corners];
     

@@ -27,11 +27,9 @@ class CurrentGroupCell: UITableViewCell {
     
     func config(name: String?, status: Bool, switchVPN: (() -> Void)?) {
         nameLabel.text = name ?? "None".localized()
-        switchButton.setBackgroundImage("FF6959".color.alpha(0.76).toImage(), forState: .Normal)
+        switchButton.addTarget(self, action: #selector(self.onSwitchValueChanged), forControlEvents:.ValueChanged)
         
-        switchButton.addTarget(self, action: #selector(self.onSwitchValueChanged), forControlEvents: .TouchUpInside)
-        switchButton.setTitle((status ? "Disconnect" : "Connect").localized(), forState: .Normal)
-        switchButton.setBackgroundImage((status ? "FF6959" : "1ABC9C").color.alpha(0.76).toImage(), forState: .Normal)
+        switchButton.setOn(status,animated: false)
         
         self.switchVPN = switchVPN
     }
@@ -44,12 +42,12 @@ class CurrentGroupCell: UITableViewCell {
         constrain(nameLabel, switchButton, contentView) { nameLabel, switchButton, superView in
             nameLabel.leading == superView.leading
             nameLabel.centerY == superView.centerY
-            nameLabel.trailing == switchButton.leading - 15
+            nameLabel.trailing == switchButton.leading - 10
             
             switchButton.centerY == superView.centerY
-            switchButton.trailing == superView.trailing - 10
+            switchButton.trailing == superView.trailing
             switchButton.width == 70
-            switchButton.height == 27
+            switchButton.height == 30
         }
     }
     
@@ -60,14 +58,11 @@ class CurrentGroupCell: UITableViewCell {
         return v
     }()
     
-    lazy var switchButton: UIButton = {
-        let v = UIButton(type: .Custom)
-        v.titleLabel?.font = UIFont.systemFontOfSize(11)
-        v.layer.cornerRadius = 4
-        v.layer.masksToBounds = true
-        v.clipsToBounds = true
+    lazy var switchButton: UISwitch = {
+        
+        let v = UISwitch()
+        
         return v
     }()
-
     
 }

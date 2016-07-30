@@ -1,19 +1,20 @@
-# Potatso ![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)
+# Freedoms ![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
-<a href="https://itunes.apple.com/app/apple-store/id1070901416?pt=2305194&ct=potatso.github&mt=8">![](https://cdn.rawgit.com/shadowsocks/Potatso/master/Download.svg)</a>
+<a href="https://itunes.apple.com/app/apple-store/id1130648334?pt=2305194&ct=Freedoms.github&mt=8">![](https://cdn.rawgit.com/shadowsocks/Freedoms/master/Download.svg)</a>
 
-Potatso is an iOS client that implements custom proxies with the leverage of Network Extension framework introduced by Apple since iOS 9.
+Freedoms is an iOS client that implements custom proxies with the leverage of Network Extension framework introduced by Apple since iOS 9.
 
-Currently, Potatso is compatible with following proxies:
+This Version is base on Potatso.
+
+Thanks Potatso and all authors !
+
+And it also open source using GPL.
+
+Currently, Freedoms is compatible with following proxies:
 
 - [Shadowsocks](https://shadowsocks.org)
 - [ShadowsocksR](https://github.com/breakwa11/shadowsocks-rss)
 
-[Subscribe Telegram Channel](https://telegram.me/potatso) to get updates of Potatso. 
-
-[Join Telegram Group](https://telegram.me/joinchat/BT0c4z49OGNZXwl9VsO0uQ) to chat with users.
-
-Author: [icodesign](https://twitter.com/icodesign_me)
 
 ## Guide
 
@@ -31,7 +32,7 @@ The development covers a lot of complicated work, costing not only money but als
 
 There're two ways you can support us:
 
-- [Download Potatso from Apple Store](https://itunes.apple.com/app/apple-store/id1070901416?pt=2305194&ct=potatso.github&mt=8). (**Recommended**) 
+- [Download Potatso from Apple Store](https://itunes.apple.com/app/apple-store/id1070901416?pt=2305194&ct=Potatso.github&mt=8). (**Recommended**) 
 
 - Donate with Alipay. (Account: **leewongstudio.com@gmail.com**)
 
@@ -91,5 +92,4 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
-
 

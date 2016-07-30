@@ -46,11 +46,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     
     public func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        if let lifeCycleItems = appConfig.lifeCycleConfig[LifeCycleKey.willEnterForeground] {
-            for item in lifeCycleItems{
-                item.object?.applicationWillEnterForeground?(application)
-            }
-        }
     }
     
     public func applicationDidBecomeActive(application: UIApplication) {
@@ -72,39 +67,27 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     public func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        if let lifeCycleItems = appConfig.lifeCycleConfig[LifeCycleKey.remoteNotification] {
+        if let lifeCycleItems = appConfig.lifeCycleConfig[LifeCycleKey.didRegisterForRemoteNotificationsWithDeviceToken] {
             for item in lifeCycleItems{
                 item.object?.application?(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
             }
         }
     }
-
-    public func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        if let lifeCycleItems = appConfig.lifeCycleConfig[LifeCycleKey.remoteNotification] {
-            for item in lifeCycleItems{
-                item.object?.application?(application, didFailToRegisterForRemoteNotificationsWithError: error)
-            }
-        }
-    }
     
     public func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        if let lifeCycleItems = appConfig.lifeCycleConfig[LifeCycleKey.remoteNotification] {
+        if let lifeCycleItems = appConfig.lifeCycleConfig[LifeCycleKey.didReceiveRemoteNotificationFetchCompletionHandler] {
             for item in lifeCycleItems{
                 item.object?.application?(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
             }
         }
     }
-
+    
     public func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         var handled = false
         if let lifeCycleItems = appConfig.lifeCycleConfig[LifeCycleKey.openURL] {
             for item in lifeCycleItems{
-                if #available(iOSApplicationExtension 9.0, *) {
-                    if let res = item.object?.application?(app, openURL: url, options: options) where res{
-                        handled = res
-                    }
-                } else {
-                    // Fallback on earlier versions
+                if let res = item.object?.application?(app, openURL: url, options: options) where res{
+                    handled = res
                 }
             }
         }

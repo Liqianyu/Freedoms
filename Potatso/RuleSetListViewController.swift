@@ -9,7 +9,6 @@
 import Foundation
 import PotatsoModel
 import Cartography
-import Realm
 
 private let rowHeight: CGFloat = 54
 private let kRuleSetCellIdentifier = "ruleset"
@@ -18,8 +17,6 @@ class RuleSetListViewController: UIViewController, UITableViewDataSource, UITabl
 
     var ruleSets: [RuleSet] = []
     var chooseCallback: (RuleSet? -> Void)?
-    // Observe Realm Notifications
-    var token: RLMNotificationToken?
 
     init(chooseCallback: (RuleSet? -> Void)? = nil) {
         self.chooseCallback = chooseCallback
@@ -32,19 +29,17 @@ class RuleSetListViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "Rule Set".localized()
+        navigationItem.title = "Rules".localized()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(add))
         reloadData()
-        token = defaultRealm.addNotificationBlock { [unowned self] notification, realm in
-            self.reloadData()
-        }
     }
-
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        token?.stop()
+    
+    func detialButtonAction(ruleSet: RuleSet?) {
+        let ruleSetVC = RuleSetConfigurationViewController(ruleSet: ruleSet)
+        navigationController?.pushViewController(ruleSetVC, animated: true)
     }
-
+    
+ 
     func add() {
         let vc = RuleSetConfigurationViewController()
         navigationController?.pushViewController(vc, animated: true)
@@ -67,6 +62,10 @@ class RuleSetListViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kRuleSetCellIdentifier, forIndexPath: indexPath) as! RuleSetCell
         cell.setRuleSet(ruleSets[indexPath.row], showSubscribe: true)
+        cell.clousureValue = { (ruleSet : RuleSet) -> Void in
+            self.detialButtonAction(ruleSet);
+        }
+     
         return cell
     }
 
@@ -82,14 +81,18 @@ class RuleSetListViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return chooseCallback == nil
+//         chooseCallback == nil
+        
+       return true
     }
 
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        
         return .Delete
     }
 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if editingStyle == .Delete {
             let item: RuleSet
             guard indexPath.row < ruleSets.count else {

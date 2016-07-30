@@ -127,7 +127,7 @@ unsigned int sweep(void)
    {
       csp = &client_list->csp;
        if (!(csp->flags & CSP_FLAG_ACTIVE)) {
-           log_time_stage(csp, TIME_STAGE_CLOSED);
+           logRequestStatus(csp, CONN_STATUS_CLOSED);
        }
       if (csp->flags & (CSP_FLAG_ACTIVE | CSP_FLAG_LOG_REQUEST))
       {
@@ -188,7 +188,6 @@ unsigned int sweep(void)
          freez(csp->client_iob->buf);
          freez(csp->iob->buf);
          freez(csp->error_message);
-         freez(csp->rule);
 
          if (csp->action->flags & ACTION_FORWARD_OVERRIDE &&
              NULL != csp->fwd)
@@ -1035,7 +1034,7 @@ void unload_forward_spec(struct forward_spec *fwd)
    return;
 }
 
-void unload_forward_ip_spec(struct forward_spec *fwd)
+void unload_forward_ip_spec(struct forward_ip_spec *fwd)
 {
     freez(fwd->gateway_host);
     freez(fwd->forward_host);

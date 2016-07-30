@@ -3,17 +3,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-def fabric
-    pod 'Fabric'
-    pod 'Crashlytics'
-end
-
 def library
-    pod 'KissXML'
-    pod 'KissXML/libxml_module'
-    pod 'ICSMainFramework', :path => "./Library/ICSMainFramework/"
-    pod 'MMWormhole', '~> 2.0.0'
-    pod 'KeychainAccess'
+   pod 'KissXML'
+   pod 'KissXML/libxml_module'
+   pod 'ICSMainFramework', :path => "./Library/ICSMainFramework/"
+   pod 'MMWormhole', '~> 2.0.0'
 end
 
 def tunnel
@@ -24,14 +18,11 @@ def socket
     pod 'CocoaAsyncSocket', '~> 7.4.3'
 end
 
-def model
-    pod 'RealmSwift'
-end
-
 target "Potatso" do
     pod 'Aspects', :path => "./Library/Aspects/"
     pod 'Cartography'
     pod 'AsyncSwift'
+    pod 'UMengAnalytics-NO-IDFA'
     pod 'SwiftColor', '~> 0.3.7'
     pod 'Appirater'
     pod 'Eureka', '~> 1.6.0'
@@ -44,12 +35,9 @@ target "Potatso" do
     pod 'Alamofire'
     pod 'ObjectMapper'
     pod 'CocoaLumberjack/Swift'
-    pod 'Helpshift', '5.6.1'
     tunnel
     library
-    fabric
     socket
-    model
 end
 
 target "PacketTunnel" do
@@ -66,19 +54,9 @@ target "TodayWidget" do
     pod 'SwiftColor'
     library
     socket
-    model
 end
 
 target "PotatsoLibrary" do
-    library
-    model
-end
-
-target "PotatsoModel" do
-    model
-end
-
-target "PotatsoLibraryTests" do
     library
 end
 
@@ -86,9 +64,6 @@ post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
             config.build_settings['ENABLE_BITCODE'] = 'NO'
-            if target.name == "HelpShift"
-                config.build_settings["OTHER_LDFLAGS"] = '$(inherited) "-ObjC"'
-            end
         end
     end
 end

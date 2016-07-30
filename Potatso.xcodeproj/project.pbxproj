@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		234575943B38F4EAD3E2B481 /* Pods_Potatso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E558CCABD311741F0CF9DD9 /* Pods_Potatso.framework */; };
-		671F4F760B4AA48CEDC1B834 /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D8D7B7274BAF6E28C980D9 /* Pods_TodayWidget.framework */; };
-		6BF89D48551DF9EC9D65F0BA /* Pods_PotatsoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972ACD00F18B9E461F9D38B1 /* Pods_PotatsoModel.framework */; };
-		9B07D6B31CB7A6A900182C1B /* PotatsoLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07D6B21CB7A6A900182C1B /* PotatsoLibraryTests.swift */; };
-		9B07D6B51CB7A6A900182C1B /* PotatsoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9B15BD1C21595B000B6541 /* PotatsoLibrary.framework */; };
-		9B07D6BE1CB7AF0000182C1B /* PotatsoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC6FFEA1CB28B4B00E5EA61 /* PotatsoModel.framework */; };
+		1ADD0F65702396F94A531C1C /* Pods_Potatso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8556718A00A829991202D1 /* Pods_Potatso.framework */; };
+		1B07A879DF37DE15BF5E8F10 /* Pods_PacketProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99342CE4707046746B94AE63 /* Pods_PacketProcessor.framework */; };
+		2664AA761CD7E60B532EF30F /* Pods_PacketTunnel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0FFB9DB502305C700EC54C /* Pods_PacketTunnel.framework */; };
+		9152E7FAA9C87AE667E453DF /* Pods_PotatsoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE52BBF9E593100CD6374D78 /* Pods_PotatsoLibrary.framework */; };
 		9B0CFA0F1C1C0B1B007BD7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CFA0E1C1C0B1B007BD7C6 /* AppDelegate.swift */; };
 		9B0CFA161C1C0B1B007BD7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0CFA151C1C0B1B007BD7C6 /* Assets.xcassets */; };
 		9B0CFA191C1C0B1B007BD7C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0CFA171C1C0B1B007BD7C6 /* LaunchScreen.storyboard */; };
-		9B0CFA241C1C0B1B007BD7C6 /* PotatsoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CFA231C1C0B1B007BD7C6 /* PotatsoTests.swift */; };
 		9B17F8EB1C53379700679FCB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B17F8EA1C53379700679FCB /* SettingsViewController.swift */; };
 		9B17F8F01C533BBF00679FCB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B17F8EF1C533BBF00679FCB /* Color.swift */; };
 		9B1D9B7B1CA4C45F0078D814 /* HUDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D9B7A1CA4C45F0078D814 /* HUDUtils.swift */; };
@@ -26,8 +23,10 @@
 		9B1F74761C3164AD0028C1A6 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F74751C3164AC0028C1A6 /* VPN.swift */; };
 		9B2290FF1C8E5B9600EEC901 /* DataInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2290FE1C8E5B9600EEC901 /* DataInitializer.swift */; };
 		9B2D8C8B1C7C3F5B00CC65B3 /* ProxyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D8C8A1C7C3F5B00CC65B3 /* ProxyManager.m */; };
+		9B2DD3C21CB2AF95008E8957 /* geoip-CN.data in Resources */ = {isa = PBXBuildFile; fileRef = 9B2DD3C11CB2AF95008E8957 /* geoip-CN.data */; };
 		9B32477B1CC091CF00A3BAFF /* PotatsoBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC6001D1CB2921C00E5EA61 /* PotatsoBase.framework */; };
 		9B32478A1CC0F1D200A3BAFF /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3247891CC0F1D200A3BAFF /* Importer.swift */; };
+		9B4B5BE71C9A5AEF00782983 /* ad.block in Resources */ = {isa = PBXBuildFile; fileRef = 9B4B5BE61C9A5AEF00782983 /* ad.block */; };
 		9B54CC441C1C266C00DDEEBB /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B54CC431C1C266C00DDEEBB /* UIViewControllerExtensions.swift */; };
 		9B5C00261CBFB35C008DDE7A /* ConfigGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C00251CBFB35C008DDE7A /* ConfigGroupCell.swift */; };
 		9B5E13BA1C897870007DFE0A /* ProxyConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E13B91C897870007DFE0A /* ProxyConfigurationViewController.swift */; };
@@ -40,24 +39,38 @@
 		9B8193BE1CBCFEE700BE320D /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B8193B21CBCFEE700BE320D /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B8193DC1CBDE68100BE320D /* PotatsoBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC6001D1CB2921C00E5EA61 /* PotatsoBase.framework */; };
 		9B8193DD1CBDE68100BE320D /* PotatsoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9B15BD1C21595B000B6541 /* PotatsoLibrary.framework */; };
+		9B8193DE1CBDE68100BE320D /* PotatsoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC6FFEA1CB28B4B00E5EA61 /* PotatsoModel.framework */; };
+		9B8193DF1CBDE68800BE320D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946D1CBA7B32003FBC47 /* Realm.framework */; };
+		9B8193E01CBDE68800BE320D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946E1CBA7B32003FBC47 /* RealmSwift.framework */; };
 		9B8193E21CBDF27000BE320D /* CurrentGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8193E11CBDF27000BE320D /* CurrentGroupCell.swift */; };
 		9B8193ED1CBE4DCA00BE320D /* UrlHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8193EC1CBE4DCA00BE320D /* UrlHandler.swift */; };
 		9B8285471CE20DE40027D15C /* HMScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B82853B1CE20DE40027D15C /* HMScanner.bundle */; };
 		9B8285481CE20DE40027D15C /* HMScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82853D1CE20DE40027D15C /* HMScanner.m */; };
+		9B8285491CE20DE40027D15C /* HMScannerBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82853F1CE20DE40027D15C /* HMScannerBorder.m */; };
+		9B82854B1CE20DE40027D15C /* HMScannerMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8285431CE20DE40027D15C /* HMScannerMaskView.m */; };
+		9B82854C1CE20DE40027D15C /* HMScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8285451CE20DE40027D15C /* HMScannerViewController.m */; };
 		9B8706001C1D788F00651424 /* PacketTunnelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8705FF1C1D788F00651424 /* PacketTunnelProvider.m */; };
 		9B8706041C1D788F00651424 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B8705FA1C1D788F00651424 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B87060B1C1DBCCD00651424 /* dns.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B87060A1C1DBCCD00651424 /* dns.m */; };
 		9B87060D1C1DBDD400651424 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B87060C1C1DBDD400651424 /* libresolv.tbd */; };
 		9B8750551CC761D000A11715 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8750541CC761D000A11715 /* RequestModel.swift */; };
+		9B88109E1CCF58820033EA20 /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88109D1CCF58820033EA20 /* RequestDetailViewController.swift */; };
 		9B9B15C01C21595B000B6541 /* PotatsoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B9B15BF1C21595B000B6541 /* PotatsoLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B9B15C41C21595B000B6541 /* PotatsoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9B15BD1C21595B000B6541 /* PotatsoLibrary.framework */; };
 		9B9B15C51C21595B000B6541 /* PotatsoLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9B15BD1C21595B000B6541 /* PotatsoLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B9E94691CBA6C73003FBC47 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E94681CBA6C73003FBC47 /* YAML.framework */; };
+		9B9E946F1CBA7B32003FBC47 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946D1CBA7B32003FBC47 /* Realm.framework */; };
+		9B9E94701CBA7B32003FBC47 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946E1CBA7B32003FBC47 /* RealmSwift.framework */; };
+		9B9E94711CBA7B40003FBC47 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946D1CBA7B32003FBC47 /* Realm.framework */; };
+		9B9E94721CBA7B40003FBC47 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946E1CBA7B32003FBC47 /* RealmSwift.framework */; };
+		9B9E94731CBA7B46003FBC47 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946D1CBA7B32003FBC47 /* Realm.framework */; };
+		9B9E94741CBA7B46003FBC47 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9E946E1CBA7B32003FBC47 /* RealmSwift.framework */; };
 		9BB3F73C1CC3D3DE00C2DD05 /* RecentRequestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3F73B1CC3D3DE00C2DD05 /* RecentRequestsCell.swift */; };
 		9BB3F7411CC60B5300C2DD05 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3F73E1CC60B5300C2DD05 /* Image.swift */; };
 		9BB3F7421CC60B5300C2DD05 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3F73F1CC60B5300C2DD05 /* Localized.swift */; };
 		9BB3F7441CC60B6F00C2DD05 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3F7431CC60B6F00C2DD05 /* Error.swift */; };
 		9BB3F7471CC60CBE00C2DD05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3F7491CC60CBE00C2DD05 /* Localizable.strings */; };
-		9BB3F74F1CC6308000C2DD05 /* RecentRequestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3F74E1CC6308000C2DD05 /* RecentRequestsVC.swift */; };
+		9BB3F74F1CC6308000C2DD05 /* RecentRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3F74E1CC6308000C2DD05 /* RecentRequestsViewController.swift */; };
 		9BB62FA31C8FFC1D002ADC54 /* RuleSetConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB62FA21C8FFC1D002ADC54 /* RuleSetConfigurationViewController.swift */; };
 		9BC215B91CB4DA9E002AADD1 /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215B81CB4DA9E002AADD1 /* Proxy.swift */; };
 		9BC215BB1CB4DAE6002AADD1 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215BA1CB4DAE6002AADD1 /* BaseModel.swift */; };
@@ -150,40 +163,24 @@
 		9BF303461CC8A1F60096588E /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF303451CC8A1F60096588E /* LogDetailViewController.swift */; };
 		9BF3034B1CCA1B060096588E /* BaseEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3034A1CCA1B060096588E /* BaseEmptyView.swift */; };
 		9BF3034D1CCA20D80096588E /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3034C1CCA20D80096588E /* Logging.swift */; };
-		A4564DF27925368D6CA67F7D /* Pods_PacketTunnel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03E5F0D3FAB0B3302CA1A4E /* Pods_PacketTunnel.framework */; };
-		A5E749DA2197E384CBCBA84B /* Pods_PacketProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310645853592796E08924EB3 /* Pods_PacketProcessor.framework */; };
-		B344F7C30FF7755C7EA32B8C /* Pods_PotatsoLibraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A27A0B817AADB557908316E3 /* Pods_PotatsoLibraryTests.framework */; };
+		9BFE21C21CD0E35D001AB019 /* DetailRawTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE21C11CD0E35D001AB019 /* DetailRawTextCell.swift */; };
 		B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6951D0165EA003EA9AA /* CloudViewController.swift */; };
 		B803A6981D02B768003EA9AA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6971D02B768003EA9AA /* API.swift */; };
 		B82574A91D1D98CF007BAF40 /* Pollution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82574A81D1D98CF007BAF40 /* Pollution.swift */; };
-		B829C1721D4395BC00C17B82 /* QRCodeScannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B829C1711D4395BC00C17B82 /* QRCodeScannerVC.m */; };
+		B82819466812EBEE4D7AC3AB /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C4C93295243D9DF685FF46 /* Pods_TodayWidget.framework */; };
 		B8319A0A1D1B975C001E50C2 /* RegexUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8319A091D1B975C001E50C2 /* RegexUtils.swift */; };
 		B8319A0D1D1BD696001E50C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8319A0F1D1BD696001E50C2 /* Localizable.strings */; };
 		B8367A811D1B6D5400D50C25 /* BaseButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8367A801D1B6D5400D50C25 /* BaseButtonRow.swift */; };
-		B83AA5701D38E6F7007905B4 /* RequestDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AA56F1D38E6F7007905B4 /* RequestDetailVC.swift */; };
-		B83AA5741D38E728007905B4 /* SegmentPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AA5731D38E728007905B4 /* SegmentPageVC.swift */; };
-		B83AA5761D38E98A007905B4 /* RequestOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AA5751D38E98A007905B4 /* RequestOverviewVC.swift */; };
-		B83D3E791D2BA689007655CE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D3E781D2BA689007655CE /* Event.swift */; };
-		B83D3E7D1D2BA8C8007655CE /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D3E7C1D2BA8C8007655CE /* Receipt.swift */; };
 		B84551401CF83D07005779CD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B845513F1CF83D07005779CD /* HomeVC.swift */; };
 		B84551421CF878BD005779CD /* ConfigGroupChooseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84551411CF878BD005779CD /* ConfigGroupChooseVC.swift */; };
+		B85449871D1020A700D7EFCC /* template.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B85449861D1020A700D7EFCC /* template.bundle */; };
+		B8670DDC1CF06C4200D87D4D /* gfwlist.data in Resources */ = {isa = PBXBuildFile; fileRef = B8670DDB1CF06C4200D87D4D /* gfwlist.data */; };
 		B86B08EC1D17F85800613014 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B08E91D17F84900613014 /* ShadowPath.framework */; };
 		B86B08ED1D17FB9B00613014 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B08E91D17F84900613014 /* ShadowPath.framework */; };
 		B87A043A1D193ABC001132F2 /* LoggerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A04391D193ABC001132F2 /* LoggerUtils.swift */; };
-		B87A72B41D433ACA006C2A1B /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A72B31D433ACA006C2A1B /* NotificationHandler.swift */; };
-		B87B98041D3B423B00FA66BF /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B98031D3B423B00FA66BF /* PaddingLabel.swift */; };
-		B87B980A1D3B64BE00FA66BF /* RequestEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B98091D3B64BE00FA66BF /* RequestEventRow.swift */; };
 		B88096B01D0579F5008BEB87 /* CloudDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88096AF1D0579F5008BEB87 /* CloudDetailViewController.swift */; };
 		B88096B21D0652F0008BEB87 /* RuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88096B11D0652F0008BEB87 /* RuleCell.swift */; };
-		B8822CCD1D2AA70A00AD252C /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = B8822CCC1D2AA70A00AD252C /* Receipt.m */; };
-		B8822CD31D2B81C400AD252C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8822CD11D2B81C400AD252C /* libcrypto.a */; };
-		B8822CD41D2B81C400AD252C /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8822CD21D2B81C400AD252C /* libssl.a */; };
-		B8822CD61D2B861E00AD252C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8822CD51D2B861E00AD252C /* StoreKit.framework */; };
-		B88559EB1D21319D00B1243E /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88559EA1D21319D00B1243E /* YAML.framework */; };
-		B88559EC1D21319D00B1243E /* YAML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B88559EA1D21319D00B1243E /* YAML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B88559F01D21371A00B1243E /* PotatsoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC6FFEA1CB28B4B00E5EA61 /* PotatsoModel.framework */; };
 		B88874491D18186100AEF002 /* ShadowPath.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B86B08E91D17F84900613014 /* ShadowPath.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B8AD81681D4AF9FB00C12FC1 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88559EA1D21319D00B1243E /* YAML.framework */; };
 		B8C256AE1D1A93DA0074D3B1 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C256AD1D1A93DA0074D3B1 /* FlatButton.swift */; };
 		B8C256B01D1A957A0074D3B1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C256AF1D1A957A0074D3B1 /* HomePresenter.swift */; };
 		B8CCC6DD1CFD5D5D000E7E2E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC6DC1CFD5D5D000E7E2E /* CollectionViewController.swift */; };
@@ -191,28 +188,10 @@
 		B8CCC6E51CFDCFD8000E7E2E /* RuleSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC6E41CFDCFD8000E7E2E /* RuleSetCell.swift */; };
 		B8CCC6E71CFDD99E000E7E2E /* ProxyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC6E61CFDD99E000E7E2E /* ProxyListViewController.swift */; };
 		B8CCC6EB1CFF1501000E7E2E /* ProxyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC6EA1CFF1501000E7E2E /* ProxyRow.swift */; };
-		B8EAC5941D40BF310046963C /* TunnelError.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EAC5931D40BF310046963C /* TunnelError.m */; };
-		B8F7845C1D36760D00F02FF5 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7845B1D36760D00F02FF5 /* DashboardVC.swift */; };
-		B8F784671D3678B400F02FF5 /* Settings.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F784651D3678B400F02FF5 /* Settings.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8F784681D3678B400F02FF5 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F784661D3678B400F02FF5 /* Settings.m */; };
-		FE9B3692D19B03821360B886 /* Pods_PotatsoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF05C4CA29869A03E25A65 /* Pods_PotatsoLibrary.framework */; };
+		FE248DB71D41B2AC00DFBE79 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = FE248DB61D41B2AC00DFBE79 /* SimplePing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9B07D6B61CB7A6A900182C1B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B0CFA031C1C0B1A007BD7C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B9B15BC1C21595B000B6541;
-			remoteInfo = PotatsoLibrary;
-		};
-		9B0CFA201C1C0B1B007BD7C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B0CFA031C1C0B1A007BD7C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B0CFA0A1C1C0B1A007BD7C6;
-			remoteInfo = Potatso;
-		};
 		9B8193BC1CBCFEE700BE320D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9B0CFA031C1C0B1A007BD7C6 /* Project object */;
@@ -272,15 +251,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9B07D6BC1CB7AA7100182C1B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9B8706081C1D788F00651424 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,7 +270,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B88874491D18186100AEF002 /* ShadowPath.framework in Embed Frameworks */,
-				B88559EC1D21319D00B1243E /* YAML.framework in Embed Frameworks */,
 				9BC6FFF21CB28B4B00E5EA61 /* PotatsoModel.framework in Embed Frameworks */,
 				9B9B15C51C21595B000B6541 /* PotatsoLibrary.framework in Embed Frameworks */,
 				9BC600251CB2921C00E5EA61 /* PotatsoBase.framework in Embed Frameworks */,
@@ -312,30 +281,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		13357BD365CD7C295F1BA3C0 /* Pods-PotatsoModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoModel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoModel/Pods-PotatsoModel.release.xcconfig"; sourceTree = "<group>"; };
-		1E558CCABD311741F0CF9DD9 /* Pods_Potatso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Potatso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		310645853592796E08924EB3 /* Pods_PacketProcessor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacketProcessor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		50F18DE964A0791935D07268 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
-		5230B5D70A0595F06A9F15F8 /* Pods-PotatsoLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibraryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibraryTests/Pods-PotatsoLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5800BF48973D41E6DFC2DF35 /* Pods-Potatso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Potatso.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Potatso/Pods-Potatso.debug.xcconfig"; sourceTree = "<group>"; };
-		66AB52504A6434A50F434876 /* Pods-TodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		6779B40186E2772C79CE2A52 /* Pods-PotatsoModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoModel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoModel/Pods-PotatsoModel.debug.xcconfig"; sourceTree = "<group>"; };
-		83D8D7B7274BAF6E28C980D9 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86E310DB3E84260841595217 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
-		89E573E7B926BE00ECB260CC /* Pods-Potatso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Potatso.release.xcconfig"; path = "Pods/Target Support Files/Pods-Potatso/Pods-Potatso.release.xcconfig"; sourceTree = "<group>"; };
-		8AB4A0AD4E706A738479B24F /* Pods-PacketTunnel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.debug.xcconfig"; sourceTree = "<group>"; };
-		972ACD00F18B9E461F9D38B1 /* Pods_PotatsoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B07D6B01CB7A6A900182C1B /* PotatsoLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PotatsoLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B07D6B21CB7A6A900182C1B /* PotatsoLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatsoLibraryTests.swift; sourceTree = "<group>"; };
-		9B07D6B41CB7A6A900182C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16DB16FD77CB354C61175CFD /* Pods-PacketProcessor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketProcessor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PacketProcessor/Pods-PacketProcessor.debug.xcconfig"; sourceTree = "<group>"; };
+		223D3B115F27EF6449033393 /* Pods-PotatsoLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibraryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibraryTests/Pods-PotatsoLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3082C2CA69510D9323AFF442 /* Pods_PotatsoLibraryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoLibraryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3915642D7D06F8135CBBDF8E /* Pods-PacketProcessor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketProcessor.release.xcconfig"; path = "Pods/Target Support Files/Pods-PacketProcessor/Pods-PacketProcessor.release.xcconfig"; sourceTree = "<group>"; };
+		3FC3D0FAD3CA19B7E7E8701C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
+		40DD8CED5385ABDE1559341D /* Pods_PotatsoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57C4C93295243D9DF685FF46 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		755BBDA05B317BA46482D46F /* Pods-TodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		7F0FFB9DB502305C700EC54C /* Pods_PacketTunnel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacketTunnel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0808581EB63CB3636D1B9F /* Pods-Potatso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Potatso.release.xcconfig"; path = "Pods/Target Support Files/Pods-Potatso/Pods-Potatso.release.xcconfig"; sourceTree = "<group>"; };
+		8FC2F4071E488583F672E28A /* Pods-PotatsoLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibrary/Pods-PotatsoLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		99342CE4707046746B94AE63 /* Pods_PacketProcessor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacketProcessor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0CFA0B1C1C0B1B007BD7C6 /* Potatso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Potatso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0CFA0E1C1C0B1B007BD7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B0CFA151C1C0B1B007BD7C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B0CFA181C1C0B1B007BD7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B0CFA1A1C1C0B1B007BD7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B0CFA1F1C1C0B1B007BD7C6 /* PotatsoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PotatsoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B0CFA231C1C0B1B007BD7C6 /* PotatsoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotatsoTests.swift; sourceTree = "<group>"; };
-		9B0CFA251C1C0B1B007BD7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B17F8EA1C53379700679FCB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = More/SettingsViewController.swift; sourceTree = "<group>"; };
 		9B17F8EF1C533BBF00679FCB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9B1D9B7A1CA4C45F0078D814 /* HUDUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDUtils.swift; sourceTree = "<group>"; };
@@ -346,7 +308,9 @@
 		9B2290FE1C8E5B9600EEC901 /* DataInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataInitializer.swift; sourceTree = "<group>"; };
 		9B2D8C891C7C3F5B00CC65B3 /* ProxyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProxyManager.h; sourceTree = "<group>"; };
 		9B2D8C8A1C7C3F5B00CC65B3 /* ProxyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProxyManager.m; sourceTree = "<group>"; };
+		9B2DD3C11CB2AF95008E8957 /* geoip-CN.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "geoip-CN.data"; sourceTree = "<group>"; };
 		9B3247891CC0F1D200A3BAFF /* Importer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
+		9B4B5BE61C9A5AEF00782983 /* ad.block */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ad.block; sourceTree = "<group>"; };
 		9B54CC431C1C266C00DDEEBB /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9B5C00251CBFB35C008DDE7A /* ConfigGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigGroupCell.swift; sourceTree = "<group>"; };
 		9B5E13B91C897870007DFE0A /* ProxyConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProxyConfigurationViewController.swift; path = Advance/ProxyConfigurationViewController.swift; sourceTree = "<group>"; };
@@ -358,15 +322,18 @@
 		9B8193B61CBCFEE700BE320D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		9B8193B91CBCFEE700BE320D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9B8193BB1CBCFEE700BE320D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B8193DA1CBD25BB00BE320D /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayWidget.entitlements; sourceTree = "<group>"; };
 		9B8193E11CBDF27000BE320D /* CurrentGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentGroupCell.swift; sourceTree = "<group>"; };
 		9B8193EC1CBE4DCA00BE320D /* UrlHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHandler.swift; sourceTree = "<group>"; };
 		9B82853B1CE20DE40027D15C /* HMScanner.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMScanner.bundle; sourceTree = "<group>"; };
 		9B82853C1CE20DE40027D15C /* HMScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScanner.h; sourceTree = "<group>"; };
 		9B82853D1CE20DE40027D15C /* HMScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScanner.m; sourceTree = "<group>"; };
-		9B8705F51C1D77CE00651424 /* Potatso.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Potatso.entitlements; sourceTree = "<group>"; };
+		9B82853E1CE20DE40027D15C /* HMScannerBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerBorder.h; sourceTree = "<group>"; };
+		9B82853F1CE20DE40027D15C /* HMScannerBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerBorder.m; sourceTree = "<group>"; };
+		9B8285421CE20DE40027D15C /* HMScannerMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerMaskView.h; sourceTree = "<group>"; };
+		9B8285431CE20DE40027D15C /* HMScannerMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerMaskView.m; sourceTree = "<group>"; };
+		9B8285441CE20DE40027D15C /* HMScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerViewController.h; sourceTree = "<group>"; };
+		9B8285451CE20DE40027D15C /* HMScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerViewController.m; sourceTree = "<group>"; };
 		9B8705FA1C1D788F00651424 /* PacketTunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PacketTunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B8705FD1C1D788F00651424 /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
 		9B8705FE1C1D788F00651424 /* PacketTunnelProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PacketTunnelProvider.h; sourceTree = "<group>"; };
 		9B8705FF1C1D788F00651424 /* PacketTunnelProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PacketTunnelProvider.m; sourceTree = "<group>"; };
 		9B8706011C1D788F00651424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -374,16 +341,20 @@
 		9B87060A1C1DBCCD00651424 /* dns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dns.m; sourceTree = "<group>"; };
 		9B87060C1C1DBDD400651424 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		9B8750541CC761D000A11715 /* RequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		9B88109D1CCF58820033EA20 /* RequestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailViewController.swift; sourceTree = "<group>"; };
 		9B9B15BD1C21595B000B6541 /* PotatsoLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PotatsoLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9B15BF1C21595B000B6541 /* PotatsoLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PotatsoLibrary.h; sourceTree = "<group>"; };
 		9B9B15C11C21595B000B6541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B9E94681CBA6C73003FBC47 /* YAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAML.framework; sourceTree = "<group>"; };
+		9B9E946D1CBA7B32003FBC47 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9B9E946E1CBA7B32003FBC47 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9BB3F73B1CC3D3DE00C2DD05 /* RecentRequestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentRequestsCell.swift; sourceTree = "<group>"; };
 		9BB3F73E1CC60B5300C2DD05 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		9BB3F73F1CC60B5300C2DD05 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		9BB3F7431CC60B6F00C2DD05 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		9BB3F7481CC60CBE00C2DD05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BB3F74A1CC60CBF00C2DD05 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		9BB3F74E1CC6308000C2DD05 /* RecentRequestsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentRequestsVC.swift; sourceTree = "<group>"; };
+		9BB3F74E1CC6308000C2DD05 /* RecentRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentRequestsViewController.swift; sourceTree = "<group>"; };
 		9BB62FA21C8FFC1D002ADC54 /* RuleSetConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RuleSetConfigurationViewController.swift; path = Advance/RuleSetConfigurationViewController.swift; sourceTree = "<group>"; };
 		9BC215B81CB4DA9E002AADD1 /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		9BC215BA1CB4DAE6002AADD1 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -828,41 +799,23 @@
 		9BF303451CC8A1F60096588E /* LogDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
 		9BF3034A1CCA1B060096588E /* BaseEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEmptyView.swift; sourceTree = "<group>"; };
 		9BF3034C1CCA20D80096588E /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
-		9E603B577575916EC652D04D /* Pods-PotatsoLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibrary/Pods-PotatsoLibrary.debug.xcconfig"; sourceTree = "<group>"; };
-		A27A0B817AADB557908316E3 /* Pods_PotatsoLibraryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoLibraryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A77B9512684E7D83890CCE80 /* Pods-PotatsoLibraryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibraryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibraryTests/Pods-PotatsoLibraryTests.release.xcconfig"; sourceTree = "<group>"; };
-		A82D5011D8BAB2707009104B /* Pods-PacketProcessor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketProcessor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PacketProcessor/Pods-PacketProcessor.debug.xcconfig"; sourceTree = "<group>"; };
-		ABA819ED933DB4838AE71396 /* Pods-PacketProcessor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketProcessor.release.xcconfig"; path = "Pods/Target Support Files/Pods-PacketProcessor/Pods-PacketProcessor.release.xcconfig"; sourceTree = "<group>"; };
-		B03E5F0D3FAB0B3302CA1A4E /* Pods_PacketTunnel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacketTunnel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BFE21C11CD0E35D001AB019 /* DetailRawTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRawTextCell.swift; sourceTree = "<group>"; };
+		A3EE5620A6B5C031ED81297C /* Pods-PotatsoLibraryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibraryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibraryTests/Pods-PotatsoLibraryTests.release.xcconfig"; sourceTree = "<group>"; };
 		B803A6951D0165EA003EA9AA /* CloudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
 		B803A6971D02B768003EA9AA /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B82574A81D1D98CF007BAF40 /* Pollution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollution.swift; sourceTree = "<group>"; };
-		B829C1701D4395BC00C17B82 /* QRCodeScannerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScannerVC.h; sourceTree = "<group>"; };
-		B829C1711D4395BC00C17B82 /* QRCodeScannerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScannerVC.m; sourceTree = "<group>"; };
 		B8319A091D1B975C001E50C2 /* RegexUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexUtils.swift; sourceTree = "<group>"; };
 		B8319A0E1D1BD696001E50C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8319A101D1BD699001E50C2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B8367A801D1B6D5400D50C25 /* BaseButtonRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButtonRow.swift; sourceTree = "<group>"; };
-		B83AA56F1D38E6F7007905B4 /* RequestDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailVC.swift; sourceTree = "<group>"; };
-		B83AA5731D38E728007905B4 /* SegmentPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentPageVC.swift; sourceTree = "<group>"; };
-		B83AA5751D38E98A007905B4 /* RequestOverviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestOverviewVC.swift; sourceTree = "<group>"; };
-		B83D3E781D2BA689007655CE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		B83D3E7C1D2BA8C8007655CE /* Receipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		B845513F1CF83D07005779CD /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B84551411CF878BD005779CD /* ConfigGroupChooseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigGroupChooseVC.swift; sourceTree = "<group>"; };
+		B85449861D1020A700D7EFCC /* template.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = template.bundle; sourceTree = "<group>"; };
+		B8670DDB1CF06C4200D87D4D /* gfwlist.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gfwlist.data; sourceTree = "<group>"; };
 		B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShadowPath.xcodeproj; path = Library/ShadowPath/ShadowPath.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B87A04391D193ABC001132F2 /* LoggerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerUtils.swift; sourceTree = "<group>"; };
-		B87A72B31D433ACA006C2A1B /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
-		B87B98031D3B423B00FA66BF /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
-		B87B98091D3B64BE00FA66BF /* RequestEventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEventRow.swift; sourceTree = "<group>"; };
 		B88096AF1D0579F5008BEB87 /* CloudDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudDetailViewController.swift; sourceTree = "<group>"; };
 		B88096B11D0652F0008BEB87 /* RuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCell.swift; sourceTree = "<group>"; };
-		B8822CCB1D2AA70A00AD252C /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
-		B8822CCC1D2AA70A00AD252C /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
-		B8822CD11D2B81C400AD252C /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "Library/ShadowPath/ShadowPath/shadowsocks-libev/libopenssl/lib/libcrypto.a"; sourceTree = "<group>"; };
-		B8822CD21D2B81C400AD252C /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "Library/ShadowPath/ShadowPath/shadowsocks-libev/libopenssl/lib/libssl.a"; sourceTree = "<group>"; };
-		B8822CD51D2B861E00AD252C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		B88559EA1D21319D00B1243E /* YAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAML.framework; path = Carthage/Build/iOS/YAML.framework; sourceTree = "<group>"; };
 		B8C256AD1D1A93DA0074D3B1 /* FlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 		B8C256AF1D1A957A0074D3B1 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B8CCC6DC1CFD5D5D000E7E2E /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -870,48 +823,32 @@
 		B8CCC6E41CFDCFD8000E7E2E /* RuleSetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleSetCell.swift; sourceTree = "<group>"; };
 		B8CCC6E61CFDD99E000E7E2E /* ProxyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyListViewController.swift; sourceTree = "<group>"; };
 		B8CCC6EA1CFF1501000E7E2E /* ProxyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProxyRow.swift; path = ../ProxyRow.swift; sourceTree = "<group>"; };
-		B8CF2F991D3DF69E009C9FF3 /* Confidential.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Confidential.h; sourceTree = "<group>"; };
-		B8EAC5921D40BF310046963C /* TunnelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunnelError.h; sourceTree = "<group>"; };
-		B8EAC5931D40BF310046963C /* TunnelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunnelError.m; sourceTree = "<group>"; };
-		B8F7845B1D36760D00F02FF5 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
-		B8F784651D3678B400F02FF5 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		B8F784661D3678B400F02FF5 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
-		DFAF05C4CA29869A03E25A65 /* Pods_PotatsoLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5F5D562F9497CEBA25A466F /* Pods-PotatsoLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibrary/Pods-PotatsoLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		BE52BBF9E593100CD6374D78 /* Pods_PotatsoLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C868B81EF2C257858A5DE59F /* Pods-PotatsoLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibrary/Pods-PotatsoLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		DAB789CDFC6643ED0A0A9CB2 /* Pods-PacketTunnel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.debug.xcconfig"; sourceTree = "<group>"; };
+		E47F2C6B1FD1EAEA9B9C7897 /* Pods-Potatso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Potatso.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Potatso/Pods-Potatso.debug.xcconfig"; sourceTree = "<group>"; };
+		EB0B2EB2CE47D10442C52B52 /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
+		FA8556718A00A829991202D1 /* Pods_Potatso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Potatso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE248DB51D41B2AC00DFBE79 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		FE248DB61D41B2AC00DFBE79 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		FEDDDD531D2249F0000E015C /* Potatso.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Potatso.entitlements; sourceTree = "<group>"; };
+		FEDDDD541D2249F9000E015C /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
+		FEDDDD551D2249FF000E015C /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayWidget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9B07D6AD1CB7A6A900182C1B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B07D6BE1CB7AF0000182C1B /* PotatsoModel.framework in Frameworks */,
-				9B07D6B51CB7A6A900182C1B /* PotatsoLibrary.framework in Frameworks */,
-				B344F7C30FF7755C7EA32B8C /* Pods_PotatsoLibraryTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9B0CFA081C1C0B1A007BD7C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8822CD61D2B861E00AD252C /* StoreKit.framework in Frameworks */,
 				B86B08ED1D17FB9B00613014 /* ShadowPath.framework in Frameworks */,
+				9B9E946F1CBA7B32003FBC47 /* Realm.framework in Frameworks */,
+				9B9E94701CBA7B32003FBC47 /* RealmSwift.framework in Frameworks */,
 				9BC600241CB2921C00E5EA61 /* PotatsoBase.framework in Frameworks */,
 				9BDA62621CAE2576007F2581 /* PacketProcessor.framework in Frameworks */,
 				9B9B15C41C21595B000B6541 /* PotatsoLibrary.framework in Frameworks */,
 				9BC6FFF11CB28B4B00E5EA61 /* PotatsoModel.framework in Frameworks */,
-				B88559EB1D21319D00B1243E /* YAML.framework in Frameworks */,
-				234575943B38F4EAD3E2B481 /* Pods_Potatso.framework in Frameworks */,
-				B8822CD31D2B81C400AD252C /* libcrypto.a in Frameworks */,
-				B8822CD41D2B81C400AD252C /* libssl.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B0CFA1C1C1C0B1B007BD7C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1ADD0F65702396F94A531C1C /* Pods_Potatso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,11 +856,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88559F01D21371A00B1243E /* PotatsoModel.framework in Frameworks */,
 				9B8193DC1CBDE68100BE320D /* PotatsoBase.framework in Frameworks */,
 				9B8193DD1CBDE68100BE320D /* PotatsoLibrary.framework in Frameworks */,
+				9B8193DE1CBDE68100BE320D /* PotatsoModel.framework in Frameworks */,
 				9B8193B41CBCFEE700BE320D /* NotificationCenter.framework in Frameworks */,
-				671F4F760B4AA48CEDC1B834 /* Pods_TodayWidget.framework in Frameworks */,
+				9B8193DF1CBDE68800BE320D /* Realm.framework in Frameworks */,
+				9B8193E01CBDE68800BE320D /* RealmSwift.framework in Frameworks */,
+				B82819466812EBEE4D7AC3AB /* Pods_TodayWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,7 +874,7 @@
 				9BC600361CB29AFF00E5EA61 /* PotatsoBase.framework in Frameworks */,
 				9BCE27AF1CAE535800B1E561 /* PacketProcessor.framework in Frameworks */,
 				9B87060D1C1DBDD400651424 /* libresolv.tbd in Frameworks */,
-				A4564DF27925368D6CA67F7D /* Pods_PacketTunnel.framework in Frameworks */,
+				2664AA761CD7E60B532EF30F /* Pods_PacketTunnel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,9 +883,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC600351CB29AEE00E5EA61 /* PotatsoBase.framework in Frameworks */,
+				9B9E94691CBA6C73003FBC47 /* YAML.framework in Frameworks */,
 				9BC6FFF61CB28C4500E5EA61 /* PotatsoModel.framework in Frameworks */,
-				B8AD81681D4AF9FB00C12FC1 /* YAML.framework in Frameworks */,
-				FE9B3692D19B03821360B886 /* Pods_PotatsoLibrary.framework in Frameworks */,
+				9152E7FAA9C87AE667E453DF /* Pods_PotatsoLibrary.framework in Frameworks */,
+				9B9E94711CBA7B40003FBC47 /* Realm.framework in Frameworks */,
+				9B9E94721CBA7B40003FBC47 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,7 +903,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B32477B1CC091CF00A3BAFF /* PotatsoBase.framework in Frameworks */,
-				6BF89D48551DF9EC9D65F0BA /* Pods_PotatsoModel.framework in Frameworks */,
+				9B9E94731CBA7B46003FBC47 /* Realm.framework in Frameworks */,
+				9B9E94741CBA7B46003FBC47 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,58 +913,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BCE27A51CAE412E00B1E561 /* libresolv.tbd in Frameworks */,
-				A5E749DA2197E384CBCBA84B /* Pods_PacketProcessor.framework in Frameworks */,
+				1B07A879DF37DE15BF5E8F10 /* Pods_PacketProcessor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		054CE3BF954F7C0FD88A3E0B /* Pods */ = {
+		8B33AB9B3E4B7DE6BB653835 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A82D5011D8BAB2707009104B /* Pods-PacketProcessor.debug.xcconfig */,
-				ABA819ED933DB4838AE71396 /* Pods-PacketProcessor.release.xcconfig */,
-				8AB4A0AD4E706A738479B24F /* Pods-PacketTunnel.debug.xcconfig */,
-				50F18DE964A0791935D07268 /* Pods-PacketTunnel.release.xcconfig */,
-				5800BF48973D41E6DFC2DF35 /* Pods-Potatso.debug.xcconfig */,
-				89E573E7B926BE00ECB260CC /* Pods-Potatso.release.xcconfig */,
-				9E603B577575916EC652D04D /* Pods-PotatsoLibrary.debug.xcconfig */,
-				F5F5D562F9497CEBA25A466F /* Pods-PotatsoLibrary.release.xcconfig */,
-				5230B5D70A0595F06A9F15F8 /* Pods-PotatsoLibraryTests.debug.xcconfig */,
-				A77B9512684E7D83890CCE80 /* Pods-PotatsoLibraryTests.release.xcconfig */,
-				66AB52504A6434A50F434876 /* Pods-TodayWidget.debug.xcconfig */,
-				86E310DB3E84260841595217 /* Pods-TodayWidget.release.xcconfig */,
-				6779B40186E2772C79CE2A52 /* Pods-PotatsoModel.debug.xcconfig */,
-				13357BD365CD7C295F1BA3C0 /* Pods-PotatsoModel.release.xcconfig */,
+				DAB789CDFC6643ED0A0A9CB2 /* Pods-PacketTunnel.debug.xcconfig */,
+				EB0B2EB2CE47D10442C52B52 /* Pods-PacketTunnel.release.xcconfig */,
+				E47F2C6B1FD1EAEA9B9C7897 /* Pods-Potatso.debug.xcconfig */,
+				8C0808581EB63CB3636D1B9F /* Pods-Potatso.release.xcconfig */,
+				8FC2F4071E488583F672E28A /* Pods-PotatsoLibrary.debug.xcconfig */,
+				C868B81EF2C257858A5DE59F /* Pods-PotatsoLibrary.release.xcconfig */,
+				223D3B115F27EF6449033393 /* Pods-PotatsoLibraryTests.debug.xcconfig */,
+				A3EE5620A6B5C031ED81297C /* Pods-PotatsoLibraryTests.release.xcconfig */,
+				755BBDA05B317BA46482D46F /* Pods-TodayWidget.debug.xcconfig */,
+				3FC3D0FAD3CA19B7E7E8701C /* Pods-TodayWidget.release.xcconfig */,
+				16DB16FD77CB354C61175CFD /* Pods-PacketProcessor.debug.xcconfig */,
+				3915642D7D06F8135CBBDF8E /* Pods-PacketProcessor.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		9B07D6B11CB7A6A900182C1B /* PotatsoLibraryTests */ = {
-			isa = PBXGroup;
-			children = (
-				9B07D6B21CB7A6A900182C1B /* PotatsoLibraryTests.swift */,
-				9B07D6B41CB7A6A900182C1B /* Info.plist */,
-			);
-			path = PotatsoLibraryTests;
 			sourceTree = "<group>";
 		};
 		9B0CFA021C1C0B1A007BD7C6 = {
 			isa = PBXGroup;
 			children = (
 				9B0CFA0D1C1C0B1B007BD7C6 /* Potatso */,
-				9B0CFA221C1C0B1B007BD7C6 /* PotatsoTests */,
 				9B8705FB1C1D788F00651424 /* PacketTunnel */,
 				9B8193B51CBCFEE700BE320D /* TodayWidget */,
 				9B9B15BE1C21595B000B6541 /* PotatsoLibrary */,
-				9B07D6B11CB7A6A900182C1B /* PotatsoLibraryTests */,
 				9BDA625C1CAE2576007F2581 /* PacketProcessor */,
 				9BC6FFEB1CB28B4B00E5EA61 /* PotatsoModel */,
 				9BC6001E1CB2921C00E5EA61 /* PotatsoBase */,
 				9B0CFA0C1C1C0B1B007BD7C6 /* Products */,
 				C8B2149E8757C44C469576D2 /* Frameworks */,
-				054CE3BF954F7C0FD88A3E0B /* Pods */,
+				8B33AB9B3E4B7DE6BB653835 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1030,13 +959,11 @@
 			isa = PBXGroup;
 			children = (
 				9B0CFA0B1C1C0B1B007BD7C6 /* Potatso.app */,
-				9B0CFA1F1C1C0B1B007BD7C6 /* PotatsoTests.xctest */,
 				9B8705FA1C1D788F00651424 /* PacketTunnel.appex */,
 				9B9B15BD1C21595B000B6541 /* PotatsoLibrary.framework */,
 				9BDA625B1CAE2576007F2581 /* PacketProcessor.framework */,
 				9BC6FFEA1CB28B4B00E5EA61 /* PotatsoModel.framework */,
 				9BC6001D1CB2921C00E5EA61 /* PotatsoBase.framework */,
-				9B07D6B01CB7A6A900182C1B /* PotatsoLibraryTests.xctest */,
 				9B8193B21CBCFEE700BE320D /* TodayWidget.appex */,
 			);
 			name = Products;
@@ -1045,14 +972,15 @@
 		9B0CFA0D1C1C0B1B007BD7C6 /* Potatso */ = {
 			isa = PBXGroup;
 			children = (
+				FEDDDD531D2249F0000E015C /* Potatso.entitlements */,
 				9BC8589F1C33B00200992032 /* Potatso-Bridge-Header.h */,
 				9B0CFA0E1C1C0B1B007BD7C6 /* AppDelegate.swift */,
 				9B1F745F1C2F84250028C1A6 /* AppInitializer.swift */,
-				B87A72B31D433ACA006C2A1B /* NotificationHandler.swift */,
 				9B2290FE1C8E5B9600EEC901 /* DataInitializer.swift */,
 				9B8193EC1CBE4DCA00BE320D /* UrlHandler.swift */,
 				9B1F74611C2F85540028C1A6 /* UIManager.swift */,
 				9B54CC431C1C266C00DDEEBB /* UIViewControllerExtensions.swift */,
+				FE248DB41D41B2AC00DFBE79 /* Common */,
 				9B5C00221CBFB315008DDE7A /* Home */,
 				9BB3F74D1CC6303700C2DD05 /* Dashboard */,
 				9B9073491CC1D7EB00A3185A /* Manage */,
@@ -1061,24 +989,16 @@
 				9BC858581C32CEFB00992032 /* Core */,
 				9BC858571C32B4AB00992032 /* Base */,
 				9B17F8EC1C53392D00679FCB /* Utils */,
-				9B8705F51C1D77CE00651424 /* Potatso.entitlements */,
+				9B2DD3C01CB2AF95008E8957 /* data */,
 				9B1F745D1C2F83AD0028C1A6 /* config.plist */,
-				B8CF2F991D3DF69E009C9FF3 /* Confidential.h */,
+				9B4B5BE61C9A5AEF00782983 /* ad.block */,
+				B85449861D1020A700D7EFCC /* template.bundle */,
 				9B0CFA151C1C0B1B007BD7C6 /* Assets.xcassets */,
 				9B0CFA171C1C0B1B007BD7C6 /* LaunchScreen.storyboard */,
 				9B0CFA1A1C1C0B1B007BD7C6 /* Info.plist */,
 				B8319A0F1D1BD696001E50C2 /* Localizable.strings */,
 			);
 			path = Potatso;
-			sourceTree = "<group>";
-		};
-		9B0CFA221C1C0B1B007BD7C6 /* PotatsoTests */ = {
-			isa = PBXGroup;
-			children = (
-				9B0CFA231C1C0B1B007BD7C6 /* PotatsoTests.swift */,
-				9B0CFA251C1C0B1B007BD7C6 /* Info.plist */,
-			);
-			path = PotatsoTests;
 			sourceTree = "<group>";
 		};
 		9B17F8EC1C53392D00679FCB /* Utils */ = {
@@ -1090,12 +1010,17 @@
 				9BB3F7431CC60B6F00C2DD05 /* Error.swift */,
 				B87A04391D193ABC001132F2 /* LoggerUtils.swift */,
 				B8319A091D1B975C001E50C2 /* RegexUtils.swift */,
-				B83D3E781D2BA689007655CE /* Event.swift */,
-				B83D3E7C1D2BA8C8007655CE /* Receipt.swift */,
-				B8822CCB1D2AA70A00AD252C /* Receipt.h */,
-				B8822CCC1D2AA70A00AD252C /* Receipt.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9B2DD3C01CB2AF95008E8957 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				9B2DD3C11CB2AF95008E8957 /* geoip-CN.data */,
+				B8670DDB1CF06C4200D87D4D /* gfwlist.data */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		9B3247831CC0C9D600A3BAFF /* Settings */ = {
@@ -1132,7 +1057,7 @@
 		9B8193B51CBCFEE700BE320D /* TodayWidget */ = {
 			isa = PBXGroup;
 			children = (
-				9B8193DA1CBD25BB00BE320D /* TodayWidget.entitlements */,
+				FEDDDD551D2249FF000E015C /* TodayWidget.entitlements */,
 				9B8193B61CBCFEE700BE320D /* TodayViewController.swift */,
 				9B8193E11CBDF27000BE320D /* CurrentGroupCell.swift */,
 				9B8193B81CBCFEE700BE320D /* MainInterface.storyboard */,
@@ -1148,8 +1073,12 @@
 				9B82853B1CE20DE40027D15C /* HMScanner.bundle */,
 				9B82853C1CE20DE40027D15C /* HMScanner.h */,
 				9B82853D1CE20DE40027D15C /* HMScanner.m */,
-				B829C1701D4395BC00C17B82 /* QRCodeScannerVC.h */,
-				B829C1711D4395BC00C17B82 /* QRCodeScannerVC.m */,
+				9B82853E1CE20DE40027D15C /* HMScannerBorder.h */,
+				9B82853F1CE20DE40027D15C /* HMScannerBorder.m */,
+				9B8285421CE20DE40027D15C /* HMScannerMaskView.h */,
+				9B8285431CE20DE40027D15C /* HMScannerMaskView.m */,
+				9B8285441CE20DE40027D15C /* HMScannerViewController.h */,
+				9B8285451CE20DE40027D15C /* HMScannerViewController.m */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -1157,14 +1086,13 @@
 		9B8705FB1C1D788F00651424 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
+				FEDDDD541D2249F9000E015C /* PacketTunnel.entitlements */,
 				9B8705FE1C1D788F00651424 /* PacketTunnelProvider.h */,
 				9B8705FF1C1D788F00651424 /* PacketTunnelProvider.m */,
 				9B2D8C891C7C3F5B00CC65B3 /* ProxyManager.h */,
 				9B2D8C8A1C7C3F5B00CC65B3 /* ProxyManager.m */,
 				9B8706091C1DBCCD00651424 /* dns.h */,
 				9B87060A1C1DBCCD00651424 /* dns.m */,
-				B8EAC5921D40BF310046963C /* TunnelError.h */,
-				B8EAC5931D40BF310046963C /* TunnelError.m */,
 				B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */,
 				9B8706011C1D788F00651424 /* Info.plist */,
 				9B8705FC1C1D788F00651424 /* Supporting Files */,
@@ -1175,7 +1103,6 @@
 		9B8705FC1C1D788F00651424 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9B8705FD1C1D788F00651424 /* PacketTunnel.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1197,6 +1124,7 @@
 		9B9B15BE1C21595B000B6541 /* PotatsoLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				9B9E94681CBA6C73003FBC47 /* YAML.framework */,
 				9B9B15BF1C21595B000B6541 /* PotatsoLibrary.h */,
 				9BC215CB1CB5E584002AADD1 /* Manager.swift */,
 				9BF3034C1CCA20D80096588E /* Logging.swift */,
@@ -1212,11 +1140,10 @@
 		9BB3F74D1CC6303700C2DD05 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				B8F7845B1D36760D00F02FF5 /* DashboardVC.swift */,
-				9BB3F74E1CC6308000C2DD05 /* RecentRequestsVC.swift */,
-				B83AA56F1D38E6F7007905B4 /* RequestDetailVC.swift */,
-				B83AA5751D38E98A007905B4 /* RequestOverviewVC.swift */,
+				9BB3F74E1CC6308000C2DD05 /* RecentRequestsViewController.swift */,
 				9BB3F73B1CC3D3DE00C2DD05 /* RecentRequestsCell.swift */,
+				9B88109D1CCF58820033EA20 /* RequestDetailViewController.swift */,
+				9BFE21C11CD0E35D001AB019 /* DetailRawTextCell.swift */,
 				9B8750541CC761D000A11715 /* RequestModel.swift */,
 				9BF303451CC8A1F60096588E /* LogDetailViewController.swift */,
 			);
@@ -1229,8 +1156,6 @@
 				9BC6001F1CB2921C00E5EA61 /* PotatsoBase.h */,
 				9BC600291CB2922E00E5EA61 /* Potatso.h */,
 				9BC6002A1CB2922E00E5EA61 /* Potatso.m */,
-				B8F784651D3678B400F02FF5 /* Settings.h */,
-				B8F784661D3678B400F02FF5 /* Settings.m */,
 				9BC6002D1CB299DE00E5EA61 /* JSONUtils.h */,
 				9BC6002E1CB299DE00E5EA61 /* JSONUtils.m */,
 				9BC6002F1CB299DE00E5EA61 /* NSError+Helper.h */,
@@ -1262,7 +1187,6 @@
 				9BC858A41C33D30100992032 /* BaseSafariViewController.swift */,
 				9BF3034A1CCA1B060096588E /* BaseEmptyView.swift */,
 				B8367A841D1B6D6800D50C25 /* Row */,
-				B83AA5731D38E728007905B4 /* SegmentPageVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1945,7 +1869,6 @@
 			isa = PBXGroup;
 			children = (
 				B8CCC6EA1CFF1501000E7E2E /* ProxyRow.swift */,
-				B87B98091D3B64BE00FA66BF /* RequestEventRow.swift */,
 				B8367A801D1B6D5400D50C25 /* BaseButtonRow.swift */,
 			);
 			name = Row;
@@ -1964,7 +1887,6 @@
 			isa = PBXGroup;
 			children = (
 				B8C256AD1D1A93DA0074D3B1 /* FlatButton.swift */,
-				B87B98031D3B423B00FA66BF /* PaddingLabel.swift */,
 			);
 			name = View;
 			path = ..;
@@ -1973,21 +1895,28 @@
 		C8B2149E8757C44C469576D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B8822CD51D2B861E00AD252C /* StoreKit.framework */,
-				B8822CD11D2B81C400AD252C /* libcrypto.a */,
-				B8822CD21D2B81C400AD252C /* libssl.a */,
-				B88559EA1D21319D00B1243E /* YAML.framework */,
+				9B9E946D1CBA7B32003FBC47 /* Realm.framework */,
+				9B9E946E1CBA7B32003FBC47 /* RealmSwift.framework */,
 				9B87060C1C1DBDD400651424 /* libresolv.tbd */,
+				7F0FFB9DB502305C700EC54C /* Pods_PacketTunnel.framework */,
+				FA8556718A00A829991202D1 /* Pods_Potatso.framework */,
+				BE52BBF9E593100CD6374D78 /* Pods_PotatsoLibrary.framework */,
+				40DD8CED5385ABDE1559341D /* Pods_PotatsoModel.framework */,
 				9B8193B31CBCFEE700BE320D /* NotificationCenter.framework */,
-				310645853592796E08924EB3 /* Pods_PacketProcessor.framework */,
-				B03E5F0D3FAB0B3302CA1A4E /* Pods_PacketTunnel.framework */,
-				1E558CCABD311741F0CF9DD9 /* Pods_Potatso.framework */,
-				DFAF05C4CA29869A03E25A65 /* Pods_PotatsoLibrary.framework */,
-				83D8D7B7274BAF6E28C980D9 /* Pods_TodayWidget.framework */,
-				972ACD00F18B9E461F9D38B1 /* Pods_PotatsoModel.framework */,
-				A27A0B817AADB557908316E3 /* Pods_PotatsoLibraryTests.framework */,
+				3082C2CA69510D9323AFF442 /* Pods_PotatsoLibraryTests.framework */,
+				57C4C93295243D9DF685FF46 /* Pods_TodayWidget.framework */,
+				99342CE4707046746B94AE63 /* Pods_PacketProcessor.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE248DB41D41B2AC00DFBE79 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FE248DB51D41B2AC00DFBE79 /* SimplePing.h */,
+				FE248DB61D41B2AC00DFBE79 /* SimplePing.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2007,7 +1936,6 @@
 			files = (
 				9BC600331CB299DE00E5EA61 /* NSError+Helper.h in Headers */,
 				9BC600311CB299DE00E5EA61 /* JSONUtils.h in Headers */,
-				B8F784671D3678B400F02FF5 /* Settings.h in Headers */,
 				9BC600201CB2921C00E5EA61 /* PotatsoBase.h in Headers */,
 				9BC6002B1CB2922E00E5EA61 /* Potatso.h in Headers */,
 			);
@@ -2033,44 +1961,19 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9B07D6AF1CB7A6A900182C1B /* PotatsoLibraryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B07D6B81CB7A6A900182C1B /* Build configuration list for PBXNativeTarget "PotatsoLibraryTests" */;
-			buildPhases = (
-				AE7363976BC33C0A8FCE6F40 /* [CP] Check Pods Manifest.lock */,
-				9B07D6AC1CB7A6A900182C1B /* Sources */,
-				9B07D6AD1CB7A6A900182C1B /* Frameworks */,
-				9B07D6AE1CB7A6A900182C1B /* Resources */,
-				9B07D6BC1CB7AA7100182C1B /* CopyFiles */,
-				BA4C15DFC5B5BB3A0133C8EF /* [CP] Embed Pods Frameworks */,
-				8533E9079437E99384941077 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B07D6B71CB7A6A900182C1B /* PBXTargetDependency */,
-			);
-			name = PotatsoLibraryTests;
-			productName = PotatsoLibraryTests;
-			productReference = 9B07D6B01CB7A6A900182C1B /* PotatsoLibraryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		9B0CFA0A1C1C0B1A007BD7C6 /* Potatso */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B0CFA281C1C0B1B007BD7C6 /* Build configuration list for PBXNativeTarget "Potatso" */;
 			buildPhases = (
-				D693559CB9C3A77E754FCAC3 /* [CP] Check Pods Manifest.lock */,
-				B8CF2F9A1D3DF6C7009C9FF3 /* Confidential */,
+				EFF5CA1B20A1B18FF95EB3CB /* [CP] Check Pods Manifest.lock */,
 				9B0CFA071C1C0B1A007BD7C6 /* Sources */,
 				9B0CFA081C1C0B1A007BD7C6 /* Frameworks */,
+				025B72D218ACF167BDC81D87 /* [CP] Copy Pods Resources */,
 				9B0CFA091C1C0B1A007BD7C6 /* Resources */,
-				B830CC631D2CF55A00FA8E37 /* Custom Data */,
 				9B8706081C1D788F00651424 /* Embed App Extensions */,
 				9B9B15821C1ECADF000B6541 /* Embed Frameworks */,
+				8DCB3CA2AD6E2F329E6058FD /* [CP] Embed Pods Frameworks */,
 				9B9E946C1CBA6F0A003FBC47 /* Cartahge */,
-				9B9C520E1CA7A19E00681FE7 /* Fabric */,
-				EE2DCE01E31A764A094282A4 /* [CP] Embed Pods Frameworks */,
-				7F5FECF0328ABB93E7B81EF0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2087,34 +1990,16 @@
 			productReference = 9B0CFA0B1C1C0B1B007BD7C6 /* Potatso.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9B0CFA1E1C1C0B1B007BD7C6 /* PotatsoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B0CFA2B1C1C0B1B007BD7C6 /* Build configuration list for PBXNativeTarget "PotatsoTests" */;
-			buildPhases = (
-				9B0CFA1B1C1C0B1B007BD7C6 /* Sources */,
-				9B0CFA1C1C1C0B1B007BD7C6 /* Frameworks */,
-				9B0CFA1D1C1C0B1B007BD7C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B0CFA211C1C0B1B007BD7C6 /* PBXTargetDependency */,
-			);
-			name = PotatsoTests;
-			productName = PotatsoTests;
-			productReference = 9B0CFA1F1C1C0B1B007BD7C6 /* PotatsoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		9B8193B11CBCFEE700BE320D /* TodayWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B8193C11CBCFEE800BE320D /* Build configuration list for PBXNativeTarget "TodayWidget" */;
 			buildPhases = (
-				DA37A7904D75DAFB6182BD09 /* [CP] Check Pods Manifest.lock */,
+				8AD34176EEF3934621AD738D /* [CP] Check Pods Manifest.lock */,
 				9B8193AE1CBCFEE700BE320D /* Sources */,
 				9B8193AF1CBCFEE700BE320D /* Frameworks */,
 				9B8193B01CBCFEE700BE320D /* Resources */,
-				284504308BFDFBB533314E62 /* [CP] Embed Pods Frameworks */,
-				0C0171FD77CBD077C0B79F2C /* [CP] Copy Pods Resources */,
+				A693D34DED78F5B09428A506 /* [CP] Copy Pods Resources */,
+				89BB5BB390F947538514EC66 /* [CP] Embed Pods Frameworks */,
 				9B8193EB1CBE37BB00BE320D /* Framework Hack */,
 			);
 			buildRules = (
@@ -2130,12 +2015,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B8706051C1D788F00651424 /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
 			buildPhases = (
-				4F5AFD532093885579A6C0C4 /* [CP] Check Pods Manifest.lock */,
+				990BA1846D8ACEA12C7AD454 /* [CP] Check Pods Manifest.lock */,
 				9B8705F61C1D788F00651424 /* Sources */,
 				9B8705F71C1D788F00651424 /* Frameworks */,
 				9B8705F81C1D788F00651424 /* Resources */,
-				DAE9B2814A9510C221B3EECC /* [CP] Embed Pods Frameworks */,
-				46E2C5B0876EEEFA2316E577 /* [CP] Copy Pods Resources */,
+				521D3898EEDAF62F54EF29AD /* [CP] Copy Pods Resources */,
+				C749E5DF1B887BE3E53F4459 /* [CP] Embed Pods Frameworks */,
 				9BC858AF1C34C5AA00992032 /* Framework Hack */,
 			);
 			buildRules = (
@@ -2151,12 +2036,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B9B15C61C21595C000B6541 /* Build configuration list for PBXNativeTarget "PotatsoLibrary" */;
 			buildPhases = (
-				267B30C8EDE6E821A0AC5900 /* [CP] Check Pods Manifest.lock */,
+				CE2BE6BC62DACD649F659F98 /* [CP] Check Pods Manifest.lock */,
 				9B9B15B91C21595B000B6541 /* Frameworks */,
 				9B9B15B81C21595B000B6541 /* Sources */,
 				9B9B15BA1C21595B000B6541 /* Headers */,
 				9B9B15BB1C21595B000B6541 /* Resources */,
-				1689257BD56686F97B37BDD6 /* [CP] Copy Pods Resources */,
+				BA88BAC6C7C0558B39F6DA19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2172,8 +2057,8 @@
 			buildConfigurationList = 9BC600281CB2921D00E5EA61 /* Build configuration list for PBXNativeTarget "PotatsoBase" */;
 			buildPhases = (
 				9BC600181CB2921C00E5EA61 /* Sources */,
-				9BC6001A1CB2921C00E5EA61 /* Headers */,
 				9BC600191CB2921C00E5EA61 /* Frameworks */,
+				9BC6001A1CB2921C00E5EA61 /* Headers */,
 				9BC6001B1CB2921C00E5EA61 /* Resources */,
 			);
 			buildRules = (
@@ -2189,13 +2074,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BC6FFF31CB28B4B00E5EA61 /* Build configuration list for PBXNativeTarget "PotatsoModel" */;
 			buildPhases = (
-				EF6682250D7E8504FEDDD7AD /* [CP] Check Pods Manifest.lock */,
 				9BC6FFE51CB28B4B00E5EA61 /* Sources */,
 				9BC6FFE61CB28B4B00E5EA61 /* Frameworks */,
 				9BC6FFE71CB28B4B00E5EA61 /* Headers */,
 				9BC6FFE81CB28B4B00E5EA61 /* Resources */,
-				337A8A0CFB5E8647AF33D41C /* [CP] Copy Pods Resources */,
-				B84B4E341D2176D6002B946A /* Framework Hack */,
 			);
 			buildRules = (
 			);
@@ -2210,12 +2092,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BDA62661CAE2576007F2581 /* Build configuration list for PBXNativeTarget "PacketProcessor" */;
 			buildPhases = (
-				82A7034AA407F637047639C3 /* [CP] Check Pods Manifest.lock */,
+				A0B0CFBA3D3233403F33D576 /* [CP] Check Pods Manifest.lock */,
 				9BDA62561CAE2576007F2581 /* Sources */,
 				9BDA62571CAE2576007F2581 /* Frameworks */,
 				9BDA62581CAE2576007F2581 /* Headers */,
 				9BDA62591CAE2576007F2581 /* Resources */,
-				32AEA4C715C4F90A5C6FC894 /* [CP] Copy Pods Resources */,
+				B30F6FBA09A67A41B15ECBDF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2236,34 +2118,25 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = TouchingApp;
 				TargetAttributes = {
-					9B07D6AF1CB7A6A900182C1B = {
-						CreatedOnToolsVersion = 7.3;
-					};
 					9B0CFA0A1C1C0B1A007BD7C6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 236Q8XURWN;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Keychain = {
 								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
-					9B0CFA1E1C1C0B1B007BD7C6 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 9B0CFA0A1C1C0B1A007BD7C6;
-					};
 					9B8193B11CBCFEE700BE320D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 236Q8XURWN;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -2272,7 +2145,6 @@
 					};
 					9B8705F91C1D788F00651424 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 236Q8XURWN;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -2281,19 +2153,15 @@
 					};
 					9B9B15BC1C21595B000B6541 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 236Q8XURWN;
 					};
 					9BC6001C1CB2921C00E5EA61 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 236Q8XURWN;
 					};
 					9BC6FFE91CB28B4B00E5EA61 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 236Q8XURWN;
 					};
 					9BDA625A1CAE2576007F2581 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 236Q8XURWN;
 					};
 				};
 			};
@@ -2317,11 +2185,9 @@
 			projectRoot = "";
 			targets = (
 				9B0CFA0A1C1C0B1A007BD7C6 /* Potatso */,
-				9B0CFA1E1C1C0B1B007BD7C6 /* PotatsoTests */,
 				9B8705F91C1D788F00651424 /* PacketTunnel */,
 				9B8193B11CBCFEE700BE320D /* TodayWidget */,
 				9B9B15BC1C21595B000B6541 /* PotatsoLibrary */,
-				9B07D6AF1CB7A6A900182C1B /* PotatsoLibraryTests */,
 				9BDA625A1CAE2576007F2581 /* PacketProcessor */,
 				9BC6FFE91CB28B4B00E5EA61 /* PotatsoModel */,
 				9BC6001C1CB2921C00E5EA61 /* PotatsoBase */,
@@ -2347,29 +2213,19 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9B07D6AE1CB7A6A900182C1B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9B0CFA091C1C0B1A007BD7C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9B1F745E1C2F83AD0028C1A6 /* config.plist in Resources */,
 				9B0CFA191C1C0B1B007BD7C6 /* LaunchScreen.storyboard in Resources */,
+				9B2DD3C21CB2AF95008E8957 /* geoip-CN.data in Resources */,
+				B8670DDC1CF06C4200D87D4D /* gfwlist.data in Resources */,
 				B8319A0D1D1BD696001E50C2 /* Localizable.strings in Resources */,
+				9B4B5BE71C9A5AEF00782983 /* ad.block in Resources */,
 				9B8285471CE20DE40027D15C /* HMScanner.bundle in Resources */,
 				9B0CFA161C1C0B1B007BD7C6 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B0CFA1D1C1C0B1B007BD7C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B85449871D1020A700D7EFCC /* template.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2422,127 +2278,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C0171FD77CBD077C0B79F2C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1689257BD56686F97B37BDD6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PotatsoLibrary/Pods-PotatsoLibrary-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		267B30C8EDE6E821A0AC5900 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		284504308BFDFBB533314E62 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		32AEA4C715C4F90A5C6FC894 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PacketProcessor/Pods-PacketProcessor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		337A8A0CFB5E8647AF33D41C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PotatsoModel/Pods-PotatsoModel-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46E2C5B0876EEEFA2316E577 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F5AFD532093885579A6C0C4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7F5FECF0328ABB93E7B81EF0 /* [CP] Copy Pods Resources */ = {
+		025B72D218ACF167BDC81D87 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2557,7 +2293,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Potatso/Pods-Potatso-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		82A7034AA407F637047639C3 /* [CP] Check Pods Manifest.lock */ = {
+		521D3898EEDAF62F54EF29AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89BB5BB390F947538514EC66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AD34176EEF3934621AD738D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2572,19 +2338,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8533E9079437E99384941077 /* [CP] Copy Pods Resources */ = {
+		8DCB3CA2AD6E2F329E6058FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PotatsoLibraryTests/Pods-PotatsoLibraryTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Potatso/Pods-Potatso-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		990BA1846D8ACEA12C7AD454 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9B8193EB1CBE37BB00BE320D /* Framework Hack */ = {
@@ -2601,20 +2382,6 @@
 			shellPath = /bin/sh;
 			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
 		};
-		9B9C520E1CA7A19E00681FE7 /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "file=\"${PROJECT_DIR}/Confidential/env.plist\"\nif [ -f $file ]\nthen\n    echo \"env.plist found.\"\n    FABRIC_SECRET=$(/usr/libexec/PlistBuddy -c \"Print :FabricSecret\" $file)\n    FABRIC_API_KEY=$(/usr/libexec/PlistBuddy -c \"Print :Fabric:APIKey\" \"${PROJECT_DIR}/Potatso/Info.plist\")\nelse\n    echo \"env.plist not found.\"\n    FABRIC_SECRET=\"fake secret\"\n    FABRIC_API_KEY=\"0000000000000000000000000000000000000000\"\nfi\necho $FABRIC_SECRET\necho $FABRIC_API_KEY\n\"${PODS_ROOT}/Fabric/run\" $FABRIC_API_KEY ${FABRIC_SECRET}";
-		};
 		9B9E946C1CBA6F0A003FBC47 /* Cartahge */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2622,6 +2389,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/YAML.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			name = Cartahge;
 			outputPaths = (
@@ -2644,7 +2413,7 @@
 			shellPath = /bin/sh;
 			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
 		};
-		AE7363976BC33C0A8FCE6F40 /* [CP] Check Pods Manifest.lock */ = {
+		A0B0CFBA3D3233403F33D576 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2659,94 +2428,52 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B830CC631D2CF55A00FA8E37 /* Custom Data */ = {
+		A693D34DED78F5B09428A506 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Custom Data";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "src=\"${PROJECT_DIR}/Confidential/\"\nif [ -d $src ]\nthen\n    echo \"Confidential found.\"\n    fabric=\"env.plist\"\n    thirdKeys=\"ThirdKeys.h\"\n    BUILD_APP_DIR=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\n    rsync -av --exclude .DS_Store --exclude $fabric --exclude $thirdKeys $src $BUILD_APP_DIR\nelse\n    echo \"Confidential not found.\"\nfi";
-		};
-		B84B4E341D2176D6002B946A /* Framework Hack */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Framework Hack";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
-		};
-		B8CF2F9A1D3DF6C7009C9FF3 /* Confidential */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Confidential;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "file=\"${PROJECT_DIR}/Potatso/Confidential.h\"\nif [ -f $file ]\nthen\n    echo \"Confidential.h found.\"\nelse\n    echo \"Confidential.h not found.\"\n    src=\"${PROJECT_DIR}/Potatso/DefaultConfidential.h\"\n    rsync -av $src $file\nfi";
-		};
-		BA4C15DFC5B5BB3A0133C8EF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PotatsoLibraryTests/Pods-PotatsoLibraryTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D693559CB9C3A77E754FCAC3 /* [CP] Check Pods Manifest.lock */ = {
+		B30F6FBA09A67A41B15ECBDF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PacketProcessor/Pods-PacketProcessor-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DA37A7904D75DAFB6182BD09 /* [CP] Check Pods Manifest.lock */ = {
+		BA88BAC6C7C0558B39F6DA19 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PotatsoLibrary/Pods-PotatsoLibrary-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DAE9B2814A9510C221B3EECC /* [CP] Embed Pods Frameworks */ = {
+		C749E5DF1B887BE3E53F4459 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2761,22 +2488,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE2DCE01E31A764A094282A4 /* [CP] Embed Pods Frameworks */ = {
+		CE2BE6BC62DACD649F659F98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Potatso/Pods-Potatso-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EF6682250D7E8504FEDDD7AD /* [CP] Check Pods Manifest.lock */ = {
+		EFF5CA1B20A1B18FF95EB3CB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2794,24 +2521,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9B07D6AC1CB7A6A900182C1B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B07D6B31CB7A6A900182C1B /* PotatsoLibraryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9B0CFA071C1C0B1A007BD7C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B83AA5701D38E6F7007905B4 /* RequestDetailVC.swift in Sources */,
-				B83D3E7D1D2BA8C8007655CE /* Receipt.swift in Sources */,
 				B8CCC6DD1CFD5D5D000E7E2E /* CollectionViewController.swift in Sources */,
 				B88096B21D0652F0008BEB87 /* RuleCell.swift in Sources */,
 				9B17F8F01C533BBF00679FCB /* Color.swift in Sources */,
-				B83AA5761D38E98A007905B4 /* RequestOverviewVC.swift in Sources */,
 				9B5C00261CBFB35C008DDE7A /* ConfigGroupCell.swift in Sources */,
 				B8C256AE1D1A93DA0074D3B1 /* FlatButton.swift in Sources */,
 				9B8193ED1CBE4DCA00BE320D /* UrlHandler.swift in Sources */,
@@ -2824,49 +2540,39 @@
 				B8C256B01D1A957A0074D3B1 /* HomePresenter.swift in Sources */,
 				9B1F74601C2F84250028C1A6 /* AppInitializer.swift in Sources */,
 				9B54CC441C1C266C00DDEEBB /* UIViewControllerExtensions.swift in Sources */,
+				FE248DB71D41B2AC00DFBE79 /* SimplePing.m in Sources */,
 				9B0CFA0F1C1C0B1B007BD7C6 /* AppDelegate.swift in Sources */,
 				9BB3F73C1CC3D3DE00C2DD05 /* RecentRequestsCell.swift in Sources */,
 				9BD4CACA1CB9600D00F99BF9 /* AlertUtils.swift in Sources */,
-				B829C1721D4395BC00C17B82 /* QRCodeScannerVC.m in Sources */,
-				B87B98041D3B423B00FA66BF /* PaddingLabel.swift in Sources */,
 				B8CCC6E51CFDCFD8000E7E2E /* RuleSetCell.swift in Sources */,
+				9B82854C1CE20DE40027D15C /* HMScannerViewController.m in Sources */,
 				B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */,
 				9BC858A51C33D30100992032 /* BaseSafariViewController.swift in Sources */,
 				B84551421CF878BD005779CD /* ConfigGroupChooseVC.swift in Sources */,
+				9B88109E1CCF58820033EA20 /* RequestDetailViewController.swift in Sources */,
 				B88096B01D0579F5008BEB87 /* CloudDetailViewController.swift in Sources */,
 				B8319A0A1D1B975C001E50C2 /* RegexUtils.swift in Sources */,
 				B84551401CF83D07005779CD /* HomeVC.swift in Sources */,
 				B8CCC6E71CFDD99E000E7E2E /* ProxyListViewController.swift in Sources */,
 				9B76EEB91C911CBF002BF5D1 /* ProxySelectionViewController.swift in Sources */,
+				9BFE21C21CD0E35D001AB019 /* DetailRawTextCell.swift in Sources */,
 				9BF303461CC8A1F60096588E /* LogDetailViewController.swift in Sources */,
 				9B1D9B7B1CA4C45F0078D814 /* HUDUtils.swift in Sources */,
-				B8822CCD1D2AA70A00AD252C /* Receipt.m in Sources */,
 				B8CCC6E11CFDCADC000E7E2E /* RuleSetListViewController.swift in Sources */,
 				9B2290FF1C8E5B9600EEC901 /* DataInitializer.swift in Sources */,
 				9BB62FA31C8FFC1D002ADC54 /* RuleSetConfigurationViewController.swift in Sources */,
 				9BF3034B1CCA1B060096588E /* BaseEmptyView.swift in Sources */,
 				9B5E13BA1C897870007DFE0A /* ProxyConfigurationViewController.swift in Sources */,
 				B8367A811D1B6D5400D50C25 /* BaseButtonRow.swift in Sources */,
-				B87B980A1D3B64BE00FA66BF /* RequestEventRow.swift in Sources */,
-				B83D3E791D2BA689007655CE /* Event.swift in Sources */,
+				9B82854B1CE20DE40027D15C /* HMScannerMaskView.m in Sources */,
 				9B17F8EB1C53379700679FCB /* SettingsViewController.swift in Sources */,
-				B8F7845C1D36760D00F02FF5 /* DashboardVC.swift in Sources */,
 				B803A6981D02B768003EA9AA /* API.swift in Sources */,
-				B87A72B41D433ACA006C2A1B /* NotificationHandler.swift in Sources */,
+				9B8285491CE20DE40027D15C /* HMScannerBorder.m in Sources */,
 				9B76EEB71C90740C002BF5D1 /* RuleSetsSelectionViewController.swift in Sources */,
-				B83AA5741D38E728007905B4 /* SegmentPageVC.swift in Sources */,
-				9BB3F74F1CC6308000C2DD05 /* RecentRequestsVC.swift in Sources */,
+				9BB3F74F1CC6308000C2DD05 /* RecentRequestsViewController.swift in Sources */,
 				9B8285481CE20DE40027D15C /* HMScanner.m in Sources */,
 				9BB3F7441CC60B6F00C2DD05 /* Error.swift in Sources */,
 				9B76EEAD1C9005D2002BF5D1 /* RuleConfigurationViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B0CFA1B1C1C0B1B007BD7C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B0CFA241C1C0B1B007BD7C6 /* PotatsoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2883,7 +2589,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8EAC5941D40BF310046963C /* TunnelError.m in Sources */,
 				9B2D8C8B1C7C3F5B00CC65B3 /* ProxyManager.m in Sources */,
 				9B8706001C1D788F00651424 /* PacketTunnelProvider.m in Sources */,
 				9B87060B1C1DBCCD00651424 /* dns.m in Sources */,
@@ -2909,7 +2614,6 @@
 			files = (
 				9BC6002C1CB2922E00E5EA61 /* Potatso.m in Sources */,
 				9BC600341CB299DE00E5EA61 /* NSError+Helper.m in Sources */,
-				B8F784681D3678B400F02FF5 /* Settings.m in Sources */,
 				9BC600321CB299DE00E5EA61 /* JSONUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2992,16 +2696,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9B07D6B71CB7A6A900182C1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B9B15BC1C21595B000B6541 /* PotatsoLibrary */;
-			targetProxy = 9B07D6B61CB7A6A900182C1B /* PBXContainerItemProxy */;
-		};
-		9B0CFA211C1C0B1B007BD7C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B0CFA0A1C1C0B1A007BD7C6 /* Potatso */;
-			targetProxy = 9B0CFA201C1C0B1B007BD7C6 /* PBXContainerItemProxy */;
-		};
 		9B8193BD1CBCFEE700BE320D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9B8193B11CBCFEE700BE320D /* TodayWidget */;
@@ -3072,42 +2766,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9B07D6B91CB7A6A900182C1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5230B5D70A0595F06A9F15F8 /* Pods-PotatsoLibraryTests.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PotatsoLibrary",
-				);
-				INFOPLIST_FILE = PotatsoLibraryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoLibraryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		9B07D6BA1CB7A6A900182C1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A77B9512684E7D83890CCE80 /* Pods-PotatsoLibraryTests.release.xcconfig */;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PotatsoLibrary",
-				);
-				INFOPLIST_FILE = PotatsoLibraryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoLibraryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		9B0CFA261C1C0B1B007BD7C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3195,7 +2853,7 @@
 		};
 		9B0CFA291C1C0B1B007BD7C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5800BF48973D41E6DFC2DF35 /* Pods-Potatso.debug.xcconfig */;
+			baseConfigurationReference = E47F2C6B1FD1EAEA9B9C7897 /* Pods-Potatso.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Potatso/Potatso.entitlements;
@@ -3213,42 +2871,25 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Library/ShadowPath/ShadowPath/libopenssl/include/\"",
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(PODS_ROOT)/KissXML/libxml",
-					"\"$(PODS_ROOT)/../../../libxml\"",
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
-					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
-					"\"${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK\"",
-				);
 				INFOPLIST_FILE = Potatso/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @rpath/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ShadowPath/ShadowPath/libopenssl/lib",
-					"$(PODS_ROOT)/Helpshift/helpshift-sdk-ios-v5.6.1",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.potatso;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Potatso/Potatso-Bridge-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		9B0CFA2A1C1C0B1B007BD7C6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89E573E7B926BE00ECB260CC /* Pods-Potatso.release.xcconfig */;
+			baseConfigurationReference = 8C0808581EB63CB3636D1B9F /* Pods-Potatso.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Potatso/Potatso.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3257,61 +2898,20 @@
 					"$(PROJECT_DIR)/PotatsoLibrary",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Library/ShadowPath/ShadowPath/libopenssl/include/\"",
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(PODS_ROOT)/KissXML/libxml",
-					"\"$(PODS_ROOT)/../../../libxml\"",
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
-					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
-					"\"${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK\"",
-				);
 				INFOPLIST_FILE = Potatso/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @rpath/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ShadowPath/ShadowPath/libopenssl/lib",
-					"$(PODS_ROOT)/Helpshift/helpshift-sdk-ios-v5.6.1",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.potatso;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Potatso/Potatso-Bridge-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "";
-			};
-			name = Release;
-		};
-		9B0CFA2C1C1C0B1B007BD7C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PotatsoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Potatso.app/Potatso";
-			};
-			name = Debug;
-		};
-		9B0CFA2D1C1C0B1B007BD7C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PotatsoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Potatso.app/Potatso";
 			};
 			name = Release;
 		};
 		9B8193BF1CBCFEE800BE320D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66AB52504A6434A50F434876 /* Pods-TodayWidget.debug.xcconfig */;
+			baseConfigurationReference = 755BBDA05B317BA46482D46F /* Pods-TodayWidget.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
@@ -3326,19 +2926,20 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.potatso.TodayWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.TodayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		9B8193C01CBCFEE800BE320D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86E310DB3E84260841595217 /* Pods-TodayWidget.release.xcconfig */;
+			baseConfigurationReference = 3FC3D0FAD3CA19B7E7E8701C /* Pods-TodayWidget.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3348,17 +2949,18 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.potatso.TodayWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.TodayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
 		9B8706061C1D788F00651424 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AB4A0AD4E706A738479B24F /* Pods-PacketTunnel.debug.xcconfig */;
+			baseConfigurationReference = DAB789CDFC6643ED0A0A9CB2 /* Pods-PacketTunnel.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "PacketTunnel/Supporting Files/PacketTunnel.entitlements";
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3379,6 +2981,7 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/libev\"",
+					"\"$(SRCROOT)/PacketTunnel/openssl/include/\"",
 				);
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3389,7 +2992,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.potatso.tunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -3398,10 +3001,10 @@
 		};
 		9B8706071C1D788F00651424 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50F18DE964A0791935D07268 /* Pods-PacketTunnel.release.xcconfig */;
+			baseConfigurationReference = EB0B2EB2CE47D10442C52B52 /* Pods-PacketTunnel.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "PacketTunnel/Supporting Files/PacketTunnel.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3419,6 +3022,7 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/libev\"",
+					"\"$(SRCROOT)/PacketTunnel/openssl/include/\"",
 				);
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3429,7 +3033,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.potatso.tunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -3438,15 +3042,16 @@
 		};
 		9B9B15C71C21595C000B6541 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E603B577575916EC652D04D /* Pods-PotatsoLibrary.debug.xcconfig */;
+			baseConfigurationReference = 8FC2F4071E488583F672E28A /* Pods-PotatsoLibrary.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 88;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3459,8 +3064,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoLibrary;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PotatsoLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3470,15 +3076,16 @@
 		};
 		9B9B15C81C21595C000B6541 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5F5D562F9497CEBA25A466F /* Pods-PotatsoLibrary.release.xcconfig */;
+			baseConfigurationReference = C868B81EF2C257858A5DE59F /* Pods-PotatsoLibrary.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 113;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 88;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3491,8 +3098,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoLibrary;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PotatsoLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3507,18 +3115,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 88;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PotatsoBase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoBase;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PotatsoBase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3532,19 +3141,20 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 113;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 88;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PotatsoBase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoBase;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PotatsoBase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3553,20 +3163,18 @@
 		};
 		9BC6FFF41CB28B4B00E5EA61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6779B40186E2772C79CE2A52 /* Pods-PotatsoModel.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 88;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3575,8 +3183,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoModel;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PotatsoModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3586,19 +3195,17 @@
 		};
 		9BC6FFF51CB28B4B00E5EA61 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13357BD365CD7C295F1BA3C0 /* Pods-PotatsoModel.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 113;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 88;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3607,8 +3214,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PotatsoModel;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PotatsoModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3617,17 +3225,17 @@
 		};
 		9BDA62641CAE2576007F2581 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A82D5011D8BAB2707009104B /* Pods-PacketProcessor.debug.xcconfig */;
+			baseConfigurationReference = 16DB16FD77CB354C61175CFD /* Pods-PacketProcessor.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 113;
+				CURRENT_PROJECT_VERSION = 88;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3647,8 +3255,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PacketProcessor;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PacketProcessor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/src/include\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/custom\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/src/include/ipv4\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/src/include/ipv6\"";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3658,16 +3267,16 @@
 		};
 		9BDA62651CAE2576007F2581 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABA819ED933DB4838AE71396 /* Pods-PacketProcessor.release.xcconfig */;
+			baseConfigurationReference = 3915642D7D06F8135CBBDF8E /* Pods-PacketProcessor.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 113;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 88;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 113;
+				DYLIB_CURRENT_VERSION = 88;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3686,8 +3295,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchingapp.PacketProcessor;
+				PRODUCT_BUNDLE_IDENTIFIER = land.freedoms.tool.PacketProcessor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/src/include\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/custom\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/src/include/ipv4\" \"$(SRCROOT)/$(TARGET_NAME)/tun2socks-iOS/lwip/src/include/ipv6\"";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3698,15 +3308,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B07D6B81CB7A6A900182C1B /* Build configuration list for PBXNativeTarget "PotatsoLibraryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B07D6B91CB7A6A900182C1B /* Debug */,
-				9B07D6BA1CB7A6A900182C1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9B0CFA061C1C0B1A007BD7C6 /* Build configuration list for PBXProject "Potatso" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3721,15 +3322,6 @@
 			buildConfigurations = (
 				9B0CFA291C1C0B1B007BD7C6 /* Debug */,
 				9B0CFA2A1C1C0B1B007BD7C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9B0CFA2B1C1C0B1B007BD7C6 /* Build configuration list for PBXNativeTarget "PotatsoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B0CFA2C1C1C0B1B007BD7C6 /* Debug */,
-				9B0CFA2D1C1C0B1B007BD7C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

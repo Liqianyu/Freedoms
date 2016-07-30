@@ -9,17 +9,14 @@
 #import "PacketTunnelProvider.h"
 #import "ProxyManager.h"
 #import "TunnelInterface.h"
-#import "TunnelError.h"
 #import "dns.h"
+#import <MMWormhole/MMWormhole.h>
 #import "PotatsoBase.h"
 #import <sys/syslog.h>
 #import <ShadowPath/ShadowPath.h>
 #import <sys/socket.h>
 #import <arpa/inet.h>
-@import MMWormhole;
-@import CocoaAsyncSocket;
-
-#define REQUEST_CACHED @"requestsCached"    // Indicate that recent requests need update
+#import <CocoaAsyncSocket/GCDAsyncSocket.h>
 
 @interface PacketTunnelProvider () <GCDAsyncSocketDelegate>
 @property (nonatomic) MMWormhole *wormhole;
@@ -36,8 +33,8 @@
 
 - (void)startTunnelWithOptions:(NSDictionary *)options completionHandler:(void (^)(NSError *))completionHandler {
     [self openLog];
+
     NSLog(@"starting potatso tunnel...");
-    [self updateUserDefaults];
     NSError *error = [TunnelInterface setupWithPacketTunnelFlow:self.packetFlow];
     if (error) {
         completionHandler(error);
@@ -50,14 +47,8 @@
     [self setupWormhole];
 }
 
-- (void)updateUserDefaults {
-    [[Potatso sharedUserDefaults] removeObjectForKey:REQUEST_CACHED];
-    [[Potatso sharedUserDefaults] synchronize];
-    [[Settings shared] setStartTime:[NSDate date]];
-}
-
 - (void)setupWormhole {
-    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.touchingapp.potatso" optionalDirectory:@"wormhole"];
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.land.freedoms.tool" optionalDirectory:@"wormhole"];
     __weak typeof(self) weakSelf = self;
     [self.wormhole listenForMessageWithIdentifier:@"getTunnelStatus" listener:^(id  _Nullable messageObject) {
         [weakSelf.wormhole passMessageObject:@"ok" identifier:@"tunnelStatus"];
@@ -78,19 +69,19 @@
             }
             d[@"url"] = [NSString stringWithCString:url encoding:NSUTF8StringEncoding];
             d[@"method"] = @(client->http->gpc);
-            for (int i=0; i < TIME_STAGE_COUNT; i++) {
-                d[[NSString stringWithFormat:@"time%d", i]] = @(client->time_stages[i]);
+            for (int i=0; i < STATUS_COUNT; i++) {
+                d[[NSString stringWithFormat:@"time%d", i]] = @(client->timestamp[i]);
             }
             d[@"version"] = @(client->http->ver);
-            if (client->rule) {
-                d[@"rule"] = [NSString stringWithCString:client->rule encoding:NSUTF8StringEncoding];
-            }
-            d[@"global"] = @(global_mode);
-            d[@"routing"] = @(client->routing);
-            d[@"forward_stage"] = @(client->current_forward_stage);
-            if (client->http->remote_host_ip_addr_str) {
-                d[@"ip"] = [NSString stringWithCString:client->http->remote_host_ip_addr_str encoding:NSUTF8StringEncoding];
-            }
+//            if (p->headers) {
+//                d[@"headers"] = [NSString stringWithCString:p->headers->string encoding:NSUTF8StringEncoding];
+//            }
+//            if (p->rule) {
+//                d[@"ruleType"] = @(p->rule->type),
+//                d[@"ruleAction"] = @(p->rule->action),
+//                d[@"ruleValue"] = [NSString stringWithCString:p->rule->value encoding:NSUTF8StringEncoding];
+//            }
+            
             d[@"responseCode"] = @(client->http->status);
             [records addObject:d];
             p = p->next;
@@ -113,56 +104,38 @@
 }
 
 - (void)startProxies {
-    [self startShadowsocks];
-    [self startHttpProxy];
-    [self startSocksProxy];
-}
-
-- (void)syncStartProxy: (void(^)(dispatch_group_t g, NSError **proxyError))handler {
-    dispatch_group_t g = dispatch_group_create();
     __block NSError *proxyError;
+    dispatch_group_t g = dispatch_group_create();
     dispatch_group_enter(g);
-    handler(g, &proxyError);
-#if DEBUG
-    long res = dispatch_group_wait(g, DISPATCH_TIME_FOREVER);
-#else
-    long res = dispatch_group_wait(g, dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2));
-#endif
-    if (res != 0) {
-        proxyError = [TunnelError errorWithMessage:@"timeout"];
-    }
+    [[ProxyManager sharedManager] startShadowsocks:^(int port, NSError *error) {
+        proxyError = error;
+        dispatch_group_leave(g);
+    }];
+    dispatch_group_wait(g, DISPATCH_TIME_FOREVER);
     if (proxyError) {
-        NSLog(@"start proxy error: %@", [proxyError localizedDescription]);
         exit(1);
         return;
     }
-}
-
-- (void)startShadowsocks {
-    [self syncStartProxy:^(dispatch_group_t g, NSError *__autoreleasing *proxyError) {
-        [[ProxyManager sharedManager] startShadowsocks:^(int port, NSError *error) {
-            *proxyError = error;
-            dispatch_group_leave(g);
-        }];
+    dispatch_group_enter(g);
+    [[ProxyManager sharedManager] startHttpProxy:^(int port, NSError *error) {
+        proxyError = error;
+        dispatch_group_leave(g);
     }];
-}
-
-- (void)startHttpProxy {
-    [self syncStartProxy:^(dispatch_group_t g, NSError *__autoreleasing *proxyError) {
-        [[ProxyManager sharedManager] startHttpProxy:^(int port, NSError *error) {
-            *proxyError = error;
-            dispatch_group_leave(g);
-        }];
+    dispatch_group_wait(g, DISPATCH_TIME_FOREVER);
+    if (proxyError) {
+        exit(1);
+        return;
+    }
+    dispatch_group_enter(g);
+    [[ProxyManager sharedManager] startSocksProxy:^(int port, NSError *error) {
+        proxyError = error;
+        dispatch_group_leave(g);
     }];
-}
-
-- (void)startSocksProxy {
-    [self syncStartProxy:^(dispatch_group_t g, NSError *__autoreleasing *proxyError) {
-        [[ProxyManager sharedManager] startSocksProxy:^(int port, NSError *error) {
-            *proxyError = error;
-            dispatch_group_leave(g);
-        }];
-    }];
+    dispatch_group_wait(g, DISPATCH_TIME_FOREVER);
+    if (proxyError) {
+        exit(1);
+        return;
+    }
 }
 
 - (void)startPacketForwarders {
@@ -187,17 +160,23 @@
     NSString *generalConfContent = [NSString stringWithContentsOfURL:[Potatso sharedGeneralConfUrl] encoding:NSUTF8StringEncoding error:nil];
     NSDictionary *generalConf = [generalConfContent jsonDictionary];
     NSString *dns = generalConf[@"dns"];
-    NEIPv4Settings *ipv4Settings = [[NEIPv4Settings alloc] initWithAddresses:@[@"192.0.2.1"] subnetMasks:@[@"255.255.255.0"]];
+    NEIPv4Settings *ipv4Settings = [[NEIPv4Settings alloc] initWithAddresses:@[@"240.0.0.1"] subnetMasks:@[@"255.255.255.0"]];
     NSArray *dnsServers;
     if (dns.length) {
         dnsServers = [dns componentsSeparatedByString:@","];
-        NSLog(@"custom dns servers: %@", dnsServers);
     }else {
         dnsServers = [DNSConfig getSystemDnsServers];
-        NSLog(@"system dns servers: %@", dnsServers);
     }
+    NSMutableArray *excludedRoutes = [NSMutableArray array];
+    for (NSString *server in dnsServers) {
+        [excludedRoutes addObject:[[NEIPv4Route alloc] initWithDestinationAddress:[server stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] subnetMask:@"255.255.255.255"]];
+    }
+    [excludedRoutes addObject:[[NEIPv4Route alloc] initWithDestinationAddress:@"192.168.0.0" subnetMask:@"255.255.0.0"]];
+    [excludedRoutes addObject:[[NEIPv4Route alloc] initWithDestinationAddress:@"10.0.0.0" subnetMask:@"255.0.0.0"]];
+    [excludedRoutes addObject:[[NEIPv4Route alloc] initWithDestinationAddress:@"172.16.0.0" subnetMask:@"255.240.0.0"]];
     ipv4Settings.includedRoutes = @[[NEIPv4Route defaultRoute]];
-    NEPacketTunnelNetworkSettings *settings = [[NEPacketTunnelNetworkSettings alloc] initWithTunnelRemoteAddress:@"192.0.2.2"];
+    ipv4Settings.excludedRoutes = excludedRoutes;
+    NEPacketTunnelNetworkSettings *settings = [[NEPacketTunnelNetworkSettings alloc] initWithTunnelRemoteAddress:@"240.200.200.200"];
     settings.IPv4Settings = ipv4Settings;
     settings.MTU = @(TunnelMTU);
     NEProxySettings* proxySettings = [[NEProxySettings alloc] init];
@@ -210,9 +189,7 @@
     proxySettings.HTTPSServer = [[NEProxyServer alloc] initWithAddress:proxyServerName port:proxyServerPort];
     proxySettings.excludeSimpleHostnames = YES;
     settings.proxySettings = proxySettings;
-    NEDNSSettings *dnsSettings = [[NEDNSSettings alloc] initWithServers:dnsServers];
-    dnsSettings.matchDomains = @[@""];
-    settings.DNSSettings = dnsSettings;
+    settings.DNSSettings = [[NEDNSSettings alloc] initWithServers:dnsServers];
     [self setTunnelNetworkSettings:settings completionHandler:^(NSError * _Nullable error) {
         if (error) {
             if (completionHandler) {

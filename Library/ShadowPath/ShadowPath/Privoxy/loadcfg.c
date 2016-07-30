@@ -98,8 +98,6 @@ const char *configfile  = NULL;
 
 static struct file_list *current_configfile = NULL;
 
-int global_mode = 0;
-
 
 /*
  * This takes the "cryptic" hash of each keyword and aliases them to
@@ -121,7 +119,6 @@ int global_mode = 0;
 #define hash_client_header_order         2701453514U /* "client-header-order" */
 #define hash_compression_level           2464423563U /* "compression-level" */
 #define hash_confdir                        1978389U /* "confdir" */
-#define hash_mmdbpath                      10609609U /* "mmdbpath" */
 #define hash_connection_sharing          1348841265U /* "connection-sharing" */
 #define hash_debug                            78263U /* "debug" */
 #define hash_default_server_timeout      2530089913U /* "default-server-timeout" */
@@ -138,7 +135,7 @@ int global_mode = 0;
 #define hash_forward_socks4a             2639958518U /* "forward-socks4a" */
 #define hash_forward_socks5              3963965522U /* "forward-socks5" */
 #define hash_forward_socks5t             2639958542U /* "forward-socks5t" */
-#define hash_global_mode                 1269710751U /* "global_mode" */
+#define hash_default_route                522661409U /* "default_to_proxy" */
 #define hash_default_route_socks4         669642605U /* "default_to_proxy" */
 #define hash_default_route_socks4a        3348213122U /* "default_to_proxy" */
 #define hash_default_route_socks5         669642606U /* "default_to_proxy" */
@@ -224,7 +221,6 @@ static void unload_configfile (void * data)
    freez(config->logdir);
    freez(config->templdir);
    freez(config->hostname);
-    freez(config->mmdbpath);
 #ifdef FEATURE_EXTERNAL_FILTERS
    freez(config->temporary_directory);
 #endif
@@ -689,14 +685,6 @@ struct configuration_spec * load_config(void)
             freez(config->confdir);
             config->confdir = make_path(NULL, arg);
             break;
-
-/* *************************************************************************
-* mmdb path
-* *************************************************************************/
-        case hash_mmdbpath :
-          freez(config->mmdbpath);
-          config->mmdbpath = make_path(NULL, arg);
-          break;
 
 /* *************************************************************************
  * compression-level 0-9
@@ -1165,8 +1153,109 @@ struct configuration_spec * load_config(void)
 
             break;
 
-          case hash_global_mode:
-              global_mode = parse_toggle_state(cmd, arg);
+          case hash_default_route:
+              strlcpy(tmp, arg, sizeof(tmp));
+              vec_count = ssplit(tmp, " \t", vec, SZ(vec));
+
+              if (vec_count != 1)
+              {
+                  log_error(LOG_LEVEL_ERROR, "Wrong number of parameters for default_route "
+                            "directive in configuration file.");
+                  string_append(&config->proxy_args,
+                                "<br>\nWARNING: Wrong number of parameters for "
+                                "forward directive in configuration file.");
+                  break;
+              }
+
+              /* allocate a new node */
+              cur_fwd_ip = zalloc(sizeof(*cur_fwd_ip));
+              if (cur_fwd_ip == NULL)
+              {
+                  log_error(LOG_LEVEL_FATAL, "can't allocate memory for configuration");
+                  /* Never get here - LOG_LEVEL_FATAL causes program exit */
+                  break;
+              }
+
+              cur_fwd_ip->type = SOCKS_NONE;
+
+              /* Parse the parent HTTP proxy host:port */
+              p = vec[0];
+
+              if (strcmp(p, ".") != 0)
+              {
+                  cur_fwd_ip->forward_port = 8000;
+                  parse_forwarder_address(p, &cur_fwd_ip->forward_host,
+                                          &cur_fwd_ip->forward_port);
+              }
+              config->default_route = cur_fwd_ip;
+              break;
+
+          case hash_default_route_socks4:
+          case hash_default_route_socks4a:
+          case hash_default_route_socks5:
+          case hash_default_route_socks5t:
+              strlcpy(tmp, arg, sizeof(tmp));
+              vec_count = ssplit(tmp, " \t", vec, SZ(vec));
+
+              if (vec_count != 2)
+              {
+                  log_error(LOG_LEVEL_ERROR, "Wrong number of parameters for "
+                            "%s directive in configuration file.", cmd);
+                  string_append(&config->proxy_args,
+                                "<br>\nWARNING: Wrong number of parameters for "
+                                "forward-socks4 directive in configuration file.");
+                  break;
+              }
+
+              /* allocate a new node */
+              cur_fwd_ip = zalloc(sizeof(*cur_fwd_ip));
+              if (cur_fwd_ip == NULL)
+              {
+                  log_error(LOG_LEVEL_FATAL, "can't allocate memory for configuration");
+                  /* Never get here - LOG_LEVEL_FATAL causes program exit */
+                  break;
+              }
+
+              if (directive_hash == hash_default_route_socks4)
+              {
+                  cur_fwd_ip->type = SOCKS_4A;
+              }
+              else if (directive_hash == hash_default_route_socks4a)
+              {
+                  cur_fwd_ip->type = SOCKS_4A;
+              }
+              else if (directive_hash == hash_default_route_socks5)
+              {
+                  cur_fwd_ip->type = SOCKS_5;
+              }
+              else
+              {
+                  assert(directive_hash == hash_default_route_socks5t);
+                  cur_fwd_ip->type = SOCKS_5T;
+              }
+
+              /* Parse the SOCKS proxy host[:port] */
+              p = vec[0];
+
+              /* XXX: This check looks like a bug. */
+              if (strcmp(p, ".") != 0)
+              {
+                  cur_fwd_ip->gateway_port = 1080;
+                  parse_forwarder_address(p, &cur_fwd_ip->gateway_host,
+                                          &cur_fwd_ip->gateway_port);
+              }
+
+              /* Parse the parent HTTP proxy host[:port] */
+              p = vec[1];
+
+              if (strcmp(p, ".") != 0)
+              {
+                  cur_fwd_ip->forward_port = 8000;
+                  parse_forwarder_address(p, &cur_fwd_ip->forward_host,
+                                          &cur_fwd_ip->forward_port);
+              }
+              config->default_route = cur_fwd_ip;
+
               break;
 
 

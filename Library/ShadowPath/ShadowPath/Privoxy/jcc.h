@@ -108,12 +108,12 @@ extern privoxy_mutex_t rand_mutex;
 
 typedef void (*shadowpath_cb) (int fd, void*);
 
-extern int shadowpath_main(char *conf_path, struct forward_spec *forward_proxy_list, shadowpath_cb cb, void *data);
+int shadowpath_main(char *conf_path, shadowpath_cb cb, void *data);
 
 extern struct log_client_states *log_clients;
 
-extern void log_time_stage(struct client_state *csp, enum time_stage stage);
-extern void log_request_error(struct client_state *csp, int error_code);
+extern void logRequestStatus(struct client_state *csp, ConnectionStatus status);
+extern void logRequestError(struct client_state *csp, int error_code);
 
 /* Revision control strings from this header and associated .c file */
 extern const char jcc_rcs[];

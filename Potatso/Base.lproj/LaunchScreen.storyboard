@@ -16,27 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1o-jb-TsT">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <navigationItem id="edO-cO-KcR"/>
-                                </items>
-                            </navigationBar>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DnW-LD-4fd">
-                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items/>
-                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://www.freedoms.land" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS1-hn-8R7">
+                                <rect key="frame" x="216" y="556" width="168" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.39281331806282727" green="0.39281331806282727" blue="0.39281331806282727" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A  Powerful  Network  Tool " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd0-05-1Dn">
+                                <rect key="frame" x="180" y="247" width="240" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="f1o-jb-TsT" secondAttribute="trailing" id="7Rt-Fk-6m2"/>
-                            <constraint firstItem="f1o-jb-TsT" firstAttribute="leading" secondItem="Q3I-OF-s6r" secondAttribute="leading" id="DXC-93-xVT"/>
-                            <constraint firstItem="trp-gr-WXV" firstAttribute="top" secondItem="DnW-LD-4fd" secondAttribute="bottom" id="F5e-zF-EXD"/>
-                            <constraint firstAttribute="trailing" secondItem="DnW-LD-4fd" secondAttribute="trailing" id="sPt-Wg-MkY"/>
-                            <constraint firstItem="DnW-LD-4fd" firstAttribute="leading" secondItem="Q3I-OF-s6r" secondAttribute="leading" id="ux1-hV-GJB"/>
-                            <constraint firstItem="f1o-jb-TsT" firstAttribute="top" secondItem="D5b-XV-L95" secondAttribute="bottom" id="zXM-kE-9dx"/>
+                            <constraint firstItem="trp-gr-WXV" firstAttribute="top" secondItem="TS1-hn-8R7" secondAttribute="bottom" constant="27" id="BVm-uV-s4Z"/>
+                            <constraint firstItem="Fd0-05-1Dn" firstAttribute="centerX" secondItem="TS1-hn-8R7" secondAttribute="centerX" id="UIf-Mf-PeR"/>
+                            <constraint firstItem="Fd0-05-1Dn" firstAttribute="top" secondItem="D5b-XV-L95" secondAttribute="bottom" constant="227" id="Ye4-4C-Mw8"/>
+                            <constraint firstItem="Fd0-05-1Dn" firstAttribute="centerX" secondItem="Q3I-OF-s6r" secondAttribute="centerX" id="oj6-1U-lbN"/>
                         </constraints>
                     </view>
                 </viewController>

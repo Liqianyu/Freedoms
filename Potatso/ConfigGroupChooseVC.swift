@@ -20,51 +20,37 @@ class ConfigGroupChooseManager {
 
     static let shared = ConfigGroupChooseManager()
 
-    var window: ConfigGroupChooseWindow?
+    var window: UIWindow?
+    var chooseVC: ConfigGroupChooseVC?
+
+    let screenHeight = UIScreen.mainScreen().bounds.height
+    let screenWidth = UIScreen.mainScreen().bounds.width
 
     func show() {
         if window == nil {
-            window = ConfigGroupChooseWindow(frame: UIScreen.mainScreen().bounds)
-            window?.backgroundColor = UIColor.clearColor()
+            window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window?.backgroundColor = "000".color.alpha(0.5)
             window?.makeKeyAndVisible()
-            window?.chooseVC.view.frame = CGRect(x: 0, y: window!.frame.height, width: window!.frame.width, height: window!.frame.height)
+            chooseVC = ConfigGroupChooseVC()
+            window?.addSubview(chooseVC!.view)
+            chooseVC!.view.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight)
             UIView.animateWithDuration(0.3) {
-                self.window?.backgroundColor = "000".color.alpha(0.5)
-                self.window?.chooseVC.view.frame.origin = CGPoint(x: 0, y: 0)
+                self.chooseVC!.view.frame.origin = CGPoint(x: 0, y: 0)
             }
         }
     }
 
     func hide() {
-        if let window = window  {
+        if let vc = chooseVC {
             UIView.animateWithDuration(0.3, animations: {
-                window.chooseVC.view.frame.origin = CGPoint(x: 0, y: window.frame.height)
+                vc.view.frame.origin = CGPoint(x: 0, y: self.screenHeight)
             }, completion: { (finished) in
-                window.chooseVC.view.removeFromSuperview()
+                vc.view.removeFromSuperview()
+                self.chooseVC = nil
                 self.window?.hidden = true
                 self.window = nil
             })
         }
-    }
-
-}
-
-class ConfigGroupChooseWindow: UIWindow {
-
-    let chooseVC = ConfigGroupChooseVC()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(chooseVC.view)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConfigGroupChooseWindow.onStatusBarFrameChange), name: UIApplicationDidChangeStatusBarFrameNotification, object: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func onStatusBarFrameChange() {
-        frame = UIScreen.mainScreen().bounds
     }
 
 }
@@ -134,10 +120,6 @@ class ConfigGroupChooseVC: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        let group = groups[indexPath.row]
-        if group.isDefault && Manager.sharedManager.vpnStatus != .Off {
-            return false
-        }
         return groups.count > 1
     }
 

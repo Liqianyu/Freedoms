@@ -43,11 +43,11 @@ public class Manager {
     }
     
     public let wormhole = MMWormhole(applicationGroupIdentifier: sharedGroupIdentifier, optionalDirectory: "wormhole")
-
+    
     var observerAdded: Bool = false
     
     public private(set) var defaultConfigGroup: ConfigurationGroup!
-
+    
     private init() {
         loadProviderManager { (manager) -> Void in
             if let manager = manager {
@@ -66,7 +66,7 @@ public class Manager {
                 self.observerAdded = true
                 NSNotificationCenter.defaultCenter().addObserverForName(NEVPNStatusDidChangeNotification, object: manager.connection, queue: NSOperationQueue.mainQueue(), usingBlock: { [unowned self] (notification) -> Void in
                     self.updateVPNStatus(manager)
-                })
+                    })
             }
         }
     }
@@ -87,7 +87,33 @@ public class Manager {
             self.vpnStatus = .Off
         }
     }
-
+    
+    
+    public func updateVPN(completion: ((NETunnelProviderManager?, ErrorType?) -> Void)? = nil) {
+        loadProviderManager { [unowned self] (manager) in
+            
+            if let manager = manager {
+                self.updateVPNStatus(manager)
+            }
+            
+            let current = self.vpnStatus
+            
+            guard current != .Off else {
+                return
+            }
+            
+            guard current != .Connecting && current != .Disconnecting else {
+                return
+            }
+            self.stopVPN()
+            
+            self.startVPN { (manager, error) -> Void in
+                completion?(manager, error)
+            }
+            
+        }
+    }
+    
     public func switchVPN(completion: ((NETunnelProviderManager?, ErrorType?) -> Void)? = nil) {
         loadProviderManager { [unowned self] (manager) in
             if let manager = manager {
@@ -105,12 +131,12 @@ public class Manager {
                 self.stopVPN()
                 completion?(nil, nil)
             }
-
+            
         }
     }
     
     public func switchVPNFromTodayWidget(context: NSExtensionContext) {
-        if let url = NSURL(string: "potatso://switch") {
+        if let url = NSURL(string: "Freedoms://switch") {
             context.openURL(url, completionHandler: nil)
         }
     }
@@ -127,18 +153,20 @@ public class Manager {
     }
     
     func copyGEOIPData() throws {
-        guard let fromURL = NSBundle.mainBundle().URLForResource("GeoLite2-Country", withExtension: "mmdb") else {
-            return
-        }
-        let toURL = Potatso.sharedUrl().URLByAppendingPathComponent("GeoLite2-Country.mmdb")
-        if NSFileManager.defaultManager().fileExistsAtPath(fromURL.path!) {
-//            if NSFileManager.defaultManager().fileExistsAtPath(toURL.path!) {
-//                try NSFileManager.defaultManager().removeItemAtURL(toURL)
-//            }
-            try NSFileManager.defaultManager().copyItemAtURL(fromURL, toURL: toURL)
+        for country in ["CN"] {
+            guard let fromURL = NSBundle.mainBundle().URLForResource("geoip-\(country)", withExtension: "data") else {
+                return
+            }
+            let toURL = Potatso.sharedUrl().URLByAppendingPathComponent("httpconf/geoip-\(country).data")
+            if NSFileManager.defaultManager().fileExistsAtPath(fromURL.path!) {
+                if NSFileManager.defaultManager().fileExistsAtPath(toURL.path!) {
+                    try NSFileManager.defaultManager().removeItemAtURL(toURL)
+                }
+                try NSFileManager.defaultManager().copyItemAtURL(fromURL, toURL: toURL)
+            }
         }
     }
-
+    
     func copyTemplateData() throws {
         guard let bundleURL = NSBundle.mainBundle().URLForResource("template", withExtension: "bundle") else {
             return
@@ -159,8 +187,9 @@ public class Manager {
             }
         }
     }
-
+    
     public func initDefaultConfigGroup() throws {
+        
         if let groupUUID = Potatso.sharedUserDefaults().stringForKey(kDefaultGroupIdentifier), group = defaultRealm.objects(ConfigurationGroup).filter("uuid = '\(groupUUID)'").first{
             try setDefaultConfigGroup(group)
         }else {
@@ -183,10 +212,15 @@ public class Manager {
     }
     
     public func setDefaultConfigGroup(group: ConfigurationGroup) throws {
+        
         defaultConfigGroup = group
         try regenerateConfigFiles()
         let uuid = defaultConfigGroup.uuid
-        let name = defaultConfigGroup.name
+        var name = defaultConfigGroup.name
+        
+        if (defaultConfigGroup.proxies.count > 0) {
+            name = defaultConfigGroup.proxies[0].name
+        }
         Potatso.sharedUserDefaults().setObject(uuid, forKey: kDefaultGroupIdentifier)
         Potatso.sharedUserDefaults().setObject(name, forKey: kDefaultGroupName)
         Potatso.sharedUserDefaults().synchronize()
@@ -198,11 +232,11 @@ public class Manager {
         try generateShadowsocksConfig()
         try generateHttpProxyConfig()
     }
-
+    
 }
 
 extension ConfigurationGroup {
-
+    
     public var isDefault: Bool {
         let defaultUUID = Manager.sharedManager.defaultConfigGroup.uuid
         let isDefault = defaultUUID == uuid
@@ -218,7 +252,7 @@ extension Manager {
     }
     
     var defaultToProxy: Bool {
-        return upstreamProxy != nil && defaultConfigGroup.defaultToProxy
+        return defaultConfigGroup.defaultToProxy ?? false
     }
     
     func generateGeneralConfig() throws {
@@ -266,16 +300,17 @@ extension Manager {
         root.addChild(filter)
         
         let socksConf = root.XMLString
+        
         try socksConf.writeToURL(Potatso.sharedSocksConfUrl(), atomically: true, encoding: NSUTF8StringEncoding)
     }
     
     func generateShadowsocksConfig() throws {
-        let confURL = Potatso.sharedProxyConfUrl()
-        var content = ""
-        if let upstreamProxy = upstreamProxy where upstreamProxy.type == .Shadowsocks || upstreamProxy.type == .ShadowsocksR {
-            content = ["host": upstreamProxy.host, "port": upstreamProxy.port, "password": upstreamProxy.password ?? "", "authscheme": upstreamProxy.authscheme ?? "", "ota": upstreamProxy.ota, "protocol": upstreamProxy.ssrProtocol ?? "", "obfs": upstreamProxy.ssrObfs ?? "", "obfs_param": upstreamProxy.ssrObfsParam ?? ""].jsonString() ?? ""
+        guard let upstreamProxy = upstreamProxy where upstreamProxy.type == .Shadowsocks else {
+            return
         }
-        try content.writeToURL(confURL, atomically: true, encoding: NSUTF8StringEncoding)
+        let confURL = Potatso.sharedProxyConfUrl()
+        let json = ["host": upstreamProxy.host, "port": upstreamProxy.port, "password": upstreamProxy.password ?? "", "authscheme": upstreamProxy.authscheme ?? "", "ota": upstreamProxy.ota]
+        try json.jsonString()?.writeToURL(confURL, atomically: true, encoding: NSUTF8StringEncoding)
     }
     
     func generateHttpProxyConfig() throws {
@@ -284,69 +319,130 @@ extension Manager {
         let templateDirPath = rootUrl.URLByAppendingPathComponent("httptemplate").path!
         let temporaryDirPath = rootUrl.URLByAppendingPathComponent("httptemporary").path!
         let logDir = rootUrl.URLByAppendingPathComponent("log").path!
-        let maxminddbPath = Potatso.sharedUrl().URLByAppendingPathComponent("GeoLite2-Country.mmdb").path!
-        let userActionUrl = confDirUrl.URLByAppendingPathComponent("potatso.action")
         for p in [confDirUrl.path!, templateDirPath, temporaryDirPath, logDir] {
             if !NSFileManager.defaultManager().fileExistsAtPath(p) {
                 _ = try? NSFileManager.defaultManager().createDirectoryAtPath(p, withIntermediateDirectories: true, attributes: nil)
             }
         }
-        var mainConf: [String: AnyObject] = [:]
-        if let path = NSBundle.mainBundle().pathForResource("proxy", ofType: "plist"), defaultConf = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-            mainConf = defaultConf
-        }
-        mainConf["confdir"] = confDirUrl.path!
-        mainConf["templdir"] = templateDirPath
-        mainConf["logdir"] = logDir
-        mainConf["mmdbpath"] = maxminddbPath
-        mainConf["global-mode"] = defaultToProxy
-//        mainConf["debug"] = 1024+65536+1
-//        mainConf["debug"] = 131071
-        mainConf["debug"] = mainConf["debug"] as! Int + 4096
-        mainConf["actionsfile"] = userActionUrl.path!
-
-        let mainContent = mainConf.map { "\($0) \($1)"}.joinWithSeparator("\n")
-        try mainContent.writeToURL(Potatso.sharedHttpProxyConfUrl(), atomically: true, encoding: NSUTF8StringEncoding)
-
-        var actionContent: [String] = []
-        var forwardURLRules: [String] = []
-        var forwardIPRules: [String] = []
-        var forwardGEOIPRules: [String] = []
-        let rules = defaultConfigGroup.ruleSets.map({ $0.rules }).flatMap({ $0 })
-        for rule in rules {
-            switch rule.type {
-            case .GeoIP:
-                forwardGEOIPRules.append(rule.description)
-            case .IPCIDR:
-                forwardIPRules.append(rule.description)
+        let directString = "forward ."
+        var proxyString = directString
+        var defaultRouteString = "default-route"
+        var defaultProxyString = "."
+        
+        if let upstreamProxy = upstreamProxy {
+            switch upstreamProxy.type {
+            case .Shadowsocks:
+                proxyString = "forward-socks5 127.0.0.1:${ssport} ."
+                if defaultToProxy {
+                    defaultRouteString = "default-route-socks5"
+                    defaultProxyString = "127.0.0.1:${ssport} ."
+                }
             default:
-                forwardURLRules.append(rule.description)
+                break
             }
         }
-
-        if forwardURLRules.count > 0 {
-            actionContent.append("{+forward-rule}")
-            actionContent.appendContentsOf(forwardURLRules)
+        let mainConf: [(String, AnyObject)] = [("confdir", confDirUrl.path!),
+                                               ("templdir", templateDirPath),
+                                               ("logdir", logDir),
+                                               ("listen-address", "127.0.0.1:0"),
+                                               ("toggle", 1),
+                                               ("enable-remote-toggle", 0),
+                                               ("enable-remote-http-toggle", 0),
+                                               ("enable-edit-actions", 0),
+                                               ("enforce-blocks", 0),
+                                               ("buffer-limit", 512),
+                                               ("enable-proxy-authentication-forwarding", 0),
+                                               ("accept-intercepted-requests", 0),
+                                               ("allow-cgi-request-crunching", 0),
+                                               ("split-large-forms", 0),
+                                               ("keep-alive-timeout", 5),
+                                               ("tolerate-pipelining", 1),
+                                               ("socket-timeout", 300),
+            ("debug", 8192),
+            ("actionsfile", "user.action"),
+            (defaultRouteString, defaultProxyString),
+        ]
+        var actionContent: [String] = []
+        var forwardIPDirectContent: [String] = []
+        var forwardIPProxyContent: [String] = []
+        var forwardURLDirectContent: [String] = []
+        var forwardURLProxyContent: [String] = []
+        var blockContent: [String] = []
+        let rules = defaultConfigGroup.ruleSets.map({ $0.rules }).flatMap({ $0 })
+        
+        for rule in rules {
+            if rule.type == .GeoIP {
+                switch rule.action {
+                case .Direct:
+                    if (!forwardIPDirectContent.contains(rule.value)) {
+                        forwardIPDirectContent.append(rule.value)
+                    }
+                case .Proxy:
+                    if (!forwardIPProxyContent.contains(rule.value)) {
+                        forwardIPProxyContent.append(rule.value)
+                    }
+                case .Reject:
+                    break
+                }
+            }else if (rule.type == .IPCIDR) {
+                switch rule.action {
+                case .Direct:
+                    forwardIPDirectContent.append(rule.value)
+                case .Proxy:
+                    forwardIPProxyContent.append(rule.value)
+                case .Reject:
+                    break
+                }
+            }else {
+                switch rule.action {
+                case .Direct:
+                    forwardURLDirectContent.append(rule.pattern)
+                    break
+                case .Proxy:
+                    forwardURLProxyContent.append(rule.pattern)
+                    break
+                case .Reject:
+                    blockContent.append(rule.pattern)
+                }
+            }
         }
-
-        if forwardIPRules.count > 0 {
-            actionContent.append("{+forward-rule}")
-            actionContent.appendContentsOf(forwardIPRules)
+        
+        let mainContent = mainConf.map { "\($0) \($1)"}.joinWithSeparator("\n")
+        try mainContent.writeToURL(Potatso.sharedHttpProxyConfUrl(), atomically: true, encoding: NSUTF8StringEncoding)
+        
+        if let _ = upstreamProxy {
+            if forwardURLProxyContent.count > 0 {
+                actionContent.append("{+forward-override{\(proxyString)}}")
+                actionContent.appendContentsOf(forwardURLProxyContent)
+            }
+            if forwardIPProxyContent.count > 0 {
+                actionContent.append("{+forward-resolved-ip{\(proxyString)}}")
+                actionContent.appendContentsOf(forwardIPProxyContent)
+                actionContent.appendContentsOf(Pollution.dnsList.map({ $0 + "/32" }))
+            }
         }
-
-        if forwardGEOIPRules.count > 0 {
-            actionContent.append("{+forward-rule}")
-            actionContent.appendContentsOf(forwardGEOIPRules)
+        
+        if forwardURLDirectContent.count > 0 {
+            actionContent.append("{+forward-override{\(directString)}}")
+            actionContent.appendContentsOf(forwardURLDirectContent)
         }
-
-        // DNS pollution
-        actionContent.append("{+forward-rule}")
-        actionContent.appendContentsOf(Pollution.dnsList.map({ "DNS-IP-CIDR, \($0)/32, PROXY" }))
-
+        
+        if forwardIPDirectContent.count > 0 {
+            actionContent.append("{+forward-resolved-ip{\(directString)}}")
+            actionContent.appendContentsOf(forwardIPDirectContent)
+        }
+        
+        if blockContent.count > 0 {
+            actionContent.append("{+block{Blocked} +handle-as-empty-document}")
+            actionContent.appendContentsOf(blockContent)
+        }
+        
+        
         let userActionString = actionContent.joinWithSeparator("\n")
+        let userActionUrl = confDirUrl.URLByAppendingPathComponent("user.action")
         try userActionString.writeToFile(userActionUrl.path!, atomically: true, encoding: NSUTF8StringEncoding)
     }
-
+    
 }
 
 extension Manager {
@@ -439,7 +535,7 @@ extension Manager {
                 manager.protocolConfiguration?.serverAddress = AppEnv.appName
                 manager.onDemandEnabled = true
                 let quickStartRule = NEOnDemandRuleEvaluateConnection()
-                quickStartRule.connectionRules = [NEEvaluateConnectionRule(matchDomains: ["connect.potatso.com"], andAction: NEEvaluateConnectionRuleAction.ConnectIfNeeded)]
+                quickStartRule.connectionRules = [NEEvaluateConnectionRule(matchDomains: ["freedoms.land"], andAction: NEEvaluateConnectionRuleAction.ConnectIfNeeded)]
                 manager.onDemandRules = [quickStartRule]
                 manager.saveToPreferencesWithCompletionHandler({ (error) -> Void in
                     if let error = error {
@@ -479,4 +575,3 @@ extension Manager {
         return manager
     }
 }
-

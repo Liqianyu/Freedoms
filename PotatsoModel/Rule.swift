@@ -20,6 +20,8 @@ public enum RuleType: String {
     case DomainSuffix = "DOMAIN-SUFFIX"
     case GeoIP = "GEOIP"
     case IPCIDR = "IP-CIDR"
+    case DomainKeyword = "DOMAIN-KEYWORD"
+    case FINAL = "FINAL"
 }
 
 extension RuleType {
@@ -40,6 +42,10 @@ extension RuleType {
             return .GeoIP
         case 7:
             return .IPCIDR
+        case 8:
+            return .DomainKeyword
+        case 9:
+            return .FINAL
         default:
             return nil
         }
@@ -107,7 +113,7 @@ public final class Rule: BaseModel {
     public dynamic var content = ""
     public dynamic var order = 0
     public let rulesets = LinkingObjects(fromType: RuleSet.self, property: "rules")
-
+    
 }
 
 extension Rule {
@@ -133,7 +139,19 @@ extension Rule {
         let json = content.jsonDictionary()
         return json?[ruleValueKey] as? String ?? ""
     }
-
+    
+    public var pattern: String {
+        switch type {
+        case .DomainMatch:
+            return "*\(value)*"
+        case .DomainSuffix:
+            return ".\(value)/"
+        case .DomainKeyword:
+            return "*\(value)*"
+        default:
+            return value
+        }
+    }
 }
 
 extension Rule {
@@ -149,7 +167,8 @@ extension Rule {
         let actionStr = parts[2].uppercaseString
         let typeStr = parts[0].uppercaseString
         let value = parts[1]
-        guard let type = RuleType(rawValue: typeStr), action = RuleAction(rawValue: actionStr) where value.characters.count > 0 else {
+        guard let type = RuleType(rawValue: typeStr), action = RuleAction(rawValue: actionStr) where value.characters.count >= 0 else {
+            
             throw RuleError.InvalidRule(str)
         }
         update(type, action: action, value: value)
@@ -164,12 +183,18 @@ extension Rule {
         self.type = type
         self.content = [ruleActionKey: action.rawValue, ruleValueKey: value].jsonString() ?? ""
     }
-
-    public override var description: String {
-        return "\(type), \(value), \(action)"
-    }
+    
 }
 
+//extension Rule: CustomStringConvertible {
+//
+//    public override var description: String {
+//        return "\(type), \(value), \(action)"
+//    }
+//
+//}
+
+//extension Rule: Equatable {}
 
 public func ==(lhs: Rule, rhs: Rule) -> Bool {
     return lhs.uuid == rhs.uuid

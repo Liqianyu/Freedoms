@@ -13,9 +13,7 @@ import ObjectMapper
 import ISO8601DateFormatter
 
 struct API {
-
-//    static let URL = "http://192.168.2.217:8000/api/"
-    static let URL = "https://api.potatso.com/"
+    static let URL = "https://api.freedoms.land/"
 
     enum Path {
         case RuleSets

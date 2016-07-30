@@ -74,9 +74,13 @@ extern int connect_port_is_forbidden(const struct client_state *csp);
  */
 extern void get_url_actions(struct client_state *csp,
                             struct http_request *http);
-extern int apply_url_actions(struct current_action_spec *action,
-                              struct client_state *csp,
+extern void apply_url_actions(struct current_action_spec *action,
+                              struct http_request *http,
                               struct url_actions *b);
+extern void get_ip_actions(struct client_state *csp, struct sockaddr_storage addr);
+extern int apply_ip_actions(struct current_action_spec *action,
+                      struct sockaddr_storage addr,
+                      struct url_actions *b);
 
 extern struct re_filterfile_spec *get_filter(const struct client_state *csp,
                                              const char *requested_name,
@@ -88,17 +92,7 @@ extern struct re_filterfile_spec *get_filter(const struct client_state *csp,
 extern struct forward_spec *forward_url(struct client_state *csp,
                                               const struct http_request *http);
 
-struct url_actions *forward_ip_routing(struct sockaddr_in *addr);
-
-struct forward_spec *forward_ip(struct client_state *csp, struct sockaddr_storage addr);
-
-struct forward_spec *forward_dns_pollution_ip(struct client_state *csp, struct sockaddr_storage addr);
-
-extern struct forward_spec *get_forward_ip_settings(struct client_state *csp);
-
-//static struct forward_spec *get_forward_rule_settings(struct client_state *csp, struct url_actions *url_action, int which);
-//
-//extern struct forward_spec *get_forward_rule_settings_by_action(struct url_actions *url_action);
+extern struct forward_ip_spec *get_forward_ip_settings(struct client_state *csp);
 
 /*
  * Content modification

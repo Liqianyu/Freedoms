@@ -19,20 +19,22 @@ class UIManager: NSObject, AppLifeCycleProtocol {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         UIView.appearance().tintColor = Color.Brand
-
+        
         UITableView.appearance().backgroundColor = Color.Background
         UITableView.appearance().separatorColor = Color.Separator
-
+        
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().barTintColor = Color.NavigationBackground
-
+        
         UITabBar.appearance().translucent = false
         UITabBar.appearance().backgroundColor = Color.TabBackground
         UITabBar.appearance().tintColor = Color.TabItemSelected
 
+        UINavigationBar.appearance().barTintColor = UIColor(red:0.23, green:0.65, blue:0.34, alpha:1.00)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        UINavigationBar.appearance().barStyle = UIBarStyle.Black
         keyWindow?.rootViewController = makeRootViewController()
-
-        Receipt.shared.validate()
         return true
     }
     
@@ -45,12 +47,24 @@ class UIManager: NSObject, AppLifeCycleProtocol {
     
     func makeChildViewControllers() -> [UIViewController] {
         CurrentGroupManager.shared.group = Manager.sharedManager.defaultConfigGroup
-        let cons: [(UIViewController.Type, String, String)] = [(HomeVC.self, "Home".localized(), "Home"), (DashboardVC.self, "Statistics".localized(), "Dashboard"), (CollectionViewController.self, "Manage".localized(), "Config"), (SettingsViewController.self, "More".localized(), "More")]
+        let inset = UIEdgeInsetsMake(6, 0, -6, 0)
+        let cons: [(UIViewController.Type, String)] = [(HomeVC.self, "Home"),(SettingsViewController.self, "More")]
         return cons.map {
             let vc = UINavigationController(rootViewController: $0.init())
-            vc.tabBarItem = UITabBarItem(title: $1, image: $2.originalImage, selectedImage: $2.templateImage)
+            vc.tabBarItem = UITabBarItem(title: "", image: $1.originalImage, selectedImage: $1.templateImage)
+            vc.tabBarItem.imageInsets = inset
             return vc
         }
     }
     
+}
+
+extension UITabBar {
+    
+    override public func sizeThatFits(size: CGSize) -> CGSize {
+        super.sizeThatFits(size)
+        var sizeThatFits = super.sizeThatFits(size)
+        sizeThatFits.height = 44
+        return sizeThatFits
+    }
 }

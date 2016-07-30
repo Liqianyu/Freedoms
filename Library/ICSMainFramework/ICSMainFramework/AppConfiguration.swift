@@ -18,9 +18,9 @@ public struct ConfigKey {
 public struct LifeCycleKey {
     public static let didFinishLaunchingWithOptions = "didFinishLaunchingWithOptions"
     public static let didEnterBackground = "didEnterBackground"
-    public static let willEnterForeground = "willEnterForeground"
     public static let didBecomeActive = "didBecomeActive"
-    public static let remoteNotification = "remoteNotification"
+    public static let didRegisterForRemoteNotificationsWithDeviceToken = "didRegisterForRemoteNotificationsWithDeviceToken"
+    public static let didReceiveRemoteNotificationFetchCompletionHandler = "didReceiveRemoteNotificationFetchCompletionHandler"
     public static let willTerminate = "willTerminate"
     public static let openURL = "openURL"
 }

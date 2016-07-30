@@ -68,7 +68,7 @@ extension RuleSet {
         }
         self.name = name
         if realm.objects(RuleSet).filter("name = '\(name)'").first != nil {
-            self.name = "\(name) \(RuleSet.dateFormatter.stringFromDate(NSDate()))"
+            self.name = RuleSet.dateFormatter.stringFromDate(NSDate())
         }
         guard let rulesStr = dictionary["rules"] as? [String] else {
             throw RuleSetError.InvalidRuleSet
@@ -79,6 +79,9 @@ extension RuleSet {
     }
     
 }
+
+//extension RuleSet: Equatable {}
+
 
 public func ==(lhs: RuleSet, rhs: RuleSet) -> Bool {
     return lhs.uuid == rhs.uuid

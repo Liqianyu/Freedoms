@@ -8,7 +8,9 @@
 
 import UIKit
 import NotificationCenter
+import PotatsoModel
 import PotatsoBase
+import RealmSwift
 import Cartography
 import SwiftColor
 import PotatsoLibrary
@@ -112,7 +114,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
         if status {
             wormhole.passMessageObject("", identifier: "stopTunnel")
         }else {
-            NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "https://on-demand.connect.potatso.com/start/")!).resume()
+            NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "https://on-demand.freedoms.land/start/")!).resume()
         }
     }
     
@@ -157,7 +159,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return 56
     }
     
     func updateLayout() {
